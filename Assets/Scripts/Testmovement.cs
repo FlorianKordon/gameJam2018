@@ -5,7 +5,7 @@ using UnityEngine;
 public class Testmovement : MonoBehaviour {
 
     public VirtualJoystick joystick;
-    public float speed = 150.0f;
+    public float speed = 200.0f;
     private Rigidbody rigid;
 
     private void Start()

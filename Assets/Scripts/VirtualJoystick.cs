@@ -7,20 +7,19 @@ using System.Collections;
 
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
-    public Image backgroundImg, joystickImg;
-    public Vector3 InputDirection { set; get; }
+    private Image backgroundImg, joystickImg;
 
+    public bool controlsInverted = false;
+
+    public Vector3 InputDirection { get; set; }
 
     private void Start()
     {
         backgroundImg = GetComponent<Image>();
         joystickImg = transform.GetChild(0).GetComponent<Image>();
-        InputDirection = Vector3.zero;
-
-        
+        InputDirection = Vector3.zero; 
     }
 
-    //EventSystems interfaces
     public virtual void OnDrag(PointerEventData ped)
     {
         Vector2 pos = Vector2.zero;
@@ -40,13 +39,18 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             {
                 InputDirection = InputDirection.normalized;
             }
-
-            Debug.Log(InputDirection);
+            //Debug.Log(InputDirection);
 
             //Move Joystick
-
             joystickImg.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (int)(backgroundImg.rectTransform.sizeDelta.x/2.5),
                                                                      InputDirection.z * (int)(backgroundImg.rectTransform.sizeDelta.y/2.5));
+
+                // 225° rotation to fit Isometric View and Inverse Controle
+            if (controlsInverted)
+                InputDirection = Quaternion.Euler(0, 225, 0) * InputDirection;
+            else 
+                // 45° rotation to fit Isometric View
+                InputDirection = Quaternion.Euler(0, 45, 0) * InputDirection;
         }
     }
     public virtual void OnPointerDown(PointerEventData ped)
@@ -57,7 +61,6 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     {
         //Resset Joystickposition if dropped
         InputDirection = Vector3.zero;
-        //InputDirection = Vector3.zero;
         joystickImg.rectTransform.anchoredPosition = Vector3.zero;      
     }
 

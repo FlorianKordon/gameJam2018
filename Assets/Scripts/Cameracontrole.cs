@@ -12,7 +12,7 @@ public class Cameracontrole : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.Find("Sphere");
+        player = GameObject.Find("Player");
         camdistance =   player.transform.position - transform.position;
         Debug.Log("Camdistance" + camdistance );
     }
@@ -25,7 +25,7 @@ public class Cameracontrole : MonoBehaviour {
 
         //transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z)+ camdistance;
 
-        transform.position = new Vector3(player.transform.position.x + camdistance.x, transform.position.y, player.transform.position.z - camdistance.z);
+        transform.position = new Vector3(player.transform.position.x - camdistance.x, transform.position.y, player.transform.position.z - camdistance.z);
         //rigid.velocity = player.velocity;
     }
 }
