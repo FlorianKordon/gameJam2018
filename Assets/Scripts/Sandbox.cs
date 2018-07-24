@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Sandbox : MonoBehaviour
-{
+{    
     private GameLogicController _glc;
     // Use this for initialization
     void Start()
