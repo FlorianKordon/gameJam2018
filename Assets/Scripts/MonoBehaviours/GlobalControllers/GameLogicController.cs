@@ -7,7 +7,7 @@ public delegate bool InputsInvertedDelegate(bool inverted);
 
 public class GameLogicController : MonoBehaviour
 {
-    public event InputsInvertedDelegate InputsInvertedEvent;
+    public event System.Action<bool> InputsInvertedEvent;
 
     public void NotifyInvertedInputs(bool inverted)
     {

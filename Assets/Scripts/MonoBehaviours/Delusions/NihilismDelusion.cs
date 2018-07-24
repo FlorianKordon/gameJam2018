@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NihilismDelusion : MonoBehaviour {
+public class NihilismDelusion : Delusion
+{
+    public override void DelusionCloseDown()
+    {
+        throw new System.NotImplementedException();
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public override void DelusionContent()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void DelusionForecast()
+    {
+        throw new System.NotImplementedException();
+    }
 }

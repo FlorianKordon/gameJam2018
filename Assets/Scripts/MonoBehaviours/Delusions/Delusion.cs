@@ -5,11 +5,13 @@ using UnityEngine;
 
 public abstract class Delusion : MonoBehaviour
 {
+    public abstract void DelusionForecast();
     public abstract void DelusionContent();
     public abstract void DelusionCloseDown();
 
     public int EncounterDelay { get; set; }
     public int Duration { get; set; }
+    public int VibrationForecastTime { get; set; }
 
     public int maxDelay = 60;
     public int minDelay = 45;
@@ -27,18 +29,24 @@ public abstract class Delusion : MonoBehaviour
 
     public IEnumerator StartDelusion(int encounterDelay)
     {
-        // Wait for the scheduled delay time
-        yield return new WaitForSeconds(encounterDelay);
-
-        // After waiting for the scheduled delay time, execute delusion content
-        DelusionContent();
-
-        // Generate new random value for the duration
+        // Generate new random value for the duration and handheld vibration forecast time
         System.Random rnd = new System.Random();
         Duration = rnd.Next(minDuration, maxDuration);
+        VibrationForecastTime = rnd.Next(1, 3);
+
+        // Wait for the scheduled delay time
+        yield return new WaitForSeconds(encounterDelay - VibrationForecastTime);
+        DelusionForecast();
+
+        // After waiting for the scheduled delay time, execute delusion content
+        yield return new WaitForSeconds(VibrationForecastTime);
+        DelusionContent();
+        isCurrentlyActive = true;
+
         // For stopping the delusion, wait for the specified duration
         yield return new WaitForSeconds(Duration);
         StopDelusion();
+        isCurrentlyActive = false;
     }
 
     public void StopDelusion()
