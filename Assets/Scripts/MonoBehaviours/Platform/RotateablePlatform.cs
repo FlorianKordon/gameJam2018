@@ -192,7 +192,7 @@ public class RotateablePlatform : Platform
 
         // Come back to original target rotation
         targetRotation = Quaternion.AngleAxis(currentRotation + rotationValue, rotationAxis);
-        while (Quaternion.Angle(transform.rotation, targetRotation) >= 1E-16)
+        while (Quaternion.Angle(transform.rotation, targetRotation) >= 1E-5)
         {
             transform.rotation = Quaternion.Slerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
             yield return null;
