@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class CharController : MonoBehaviour
+public class IsometricPlayerController : MonoBehaviour
 {
     [SerializeField]
     float moveSpeed = 4f; //Change in inspector to adjust move speed

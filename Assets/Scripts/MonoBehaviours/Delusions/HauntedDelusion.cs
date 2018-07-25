@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class HauntedDelusion : Delusion
 {
-    public override void DelusionCloseDown()
-    {
+    public PersecutorAgent persecutor;
 
+    public override void DelusionForecast()
+    {
+        //Debug.Log("Vibration Forecast");
+        Handheld.Vibrate();
     }
 
     public override void DelusionContent()
     {
-
+        Debug.Log("Start Hunting");
+        persecutor.SpawnAndHaunt();
     }
 
-    public override void DelusionForecast()
+    public override void DelusionCloseDown()
     {
-
+        Debug.Log("Stop Hunting");
+        persecutor.StopHaunting();
     }
 }

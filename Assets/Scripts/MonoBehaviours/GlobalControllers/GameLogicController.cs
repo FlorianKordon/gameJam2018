@@ -13,11 +13,13 @@ public class GameLogicController : MonoBehaviour
 
     public void NotifyInvertedInputs(bool inverted)
     {
-        InputsInvertedEvent(inverted);
+        if (InputsInvertedEvent != null)
+            InputsInvertedEvent(inverted);
     }
 
     public void NotifyPlayerDeath()
     {
-        PlayerDiedEvent();
+        if (PlayerDiedEvent != null)
+            PlayerDiedEvent();
     }
 }

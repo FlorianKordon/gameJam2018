@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
-public class PersecuterAgent : MonoBehaviour
+public class PersecutorAgent : MonoBehaviour
 {
     public GameObject playerCharacter;
     public bool IsHaunting { get; set; }
     public float killDistance = 1f;
     public float speedMultiplier = 1.2f;
+    public float speedIncrease = 0.05f;
 
     // NAVMESH AGENT
     public Animator animator;
@@ -18,26 +19,37 @@ public class PersecuterAgent : MonoBehaviour
     public float maxDistanceToPlayerChar = 5f;
 
     private Vector3 destinationPosition;
-    private const float navMeshSampleDistance = 4f;
+    private const float navMeshSampleDistance = 10f;
+    private float baseSpeed;
 
     // ANIMATOR
     private readonly int hashSpeedParam = Animator.StringToHash("Speed");
     private float speedDampTime = 0.1f;
 
+    // MESH
+    private MeshRenderer _meshRend;
+
     // GLOBAL CONTROLLERS
     private GameLogicController _glc;
+
+    private void Awake()
+    {
+        IsHaunting = false;
+    }
 
     private void Start()
     {
         //destinationPosition = transform.position;
-        IsHaunting = false;
-
         _glc = FindObjectOfType<GameLogicController>();
+        _meshRend = GetComponent<MeshRenderer>();
+        _meshRend.enabled = false;
+
+        baseSpeed = agent.speed;
     }
 
     private void Update()
     {
-        if (agent.pathPending)
+        if (agent.pathPending || !IsHaunting)
             return;
 
         float speed = agent.desiredVelocity.magnitude;
@@ -55,24 +67,36 @@ public class PersecuterAgent : MonoBehaviour
             return;
 
         Vector3 spawnPosition = SamplePosition(DetermineSpawningPointWorldPos());
+
+        Debug.Log("World Pos: " + DetermineSpawningPointWorldPos());
+        Debug.Log("Spawn Pos: " + spawnPosition);
+        Debug.Log("Player Pos: " + playerCharacter.transform.position);
         Quaternion rotationToPlayerChar = Quaternion.LookRotation(playerCharacter.transform.position, Vector3.up);
 
-        transform.SetPositionAndRotation(spawnPosition, rotationToPlayerChar);
+        agent.Warp(spawnPosition);
+        //transform.SetPositionAndRotation(spawnPosition, rotationToPlayerChar);
+        //transform.position = spawnPosition;
 
-        InvokeRepeating("FollowAndHauntPlayer", 1f, 1f);
+        InvokeRepeating("FollowAndHauntPlayer", 0.2f, 0.2f);
         IsHaunting = true;
+        agent.enabled = true;
+        _meshRend.enabled = true;
     }
 
     public void StopHaunting()
     {
-        IsHaunting = false;
         CancelInvoke();
+
+        IsHaunting = false;
+        agent.enabled = false;
+        _meshRend.enabled = false;
+        agent.speed = baseSpeed;
     }
 
     private void FollowAndHauntPlayer()
     {
         agent.SetDestination(SamplePosition(playerCharacter.transform.position));
-        agent.speed = agent.speed * speedMultiplier;
+        agent.speed += (speedIncrease*speedMultiplier);
     }
 
     private void CheckPlayerKill()
@@ -81,7 +105,7 @@ public class PersecuterAgent : MonoBehaviour
         if (Vector3.Distance(playerCharacter.transform.position, transform.position) <= killDistance)
         {
             _glc.NotifyPlayerDeath();
-			// ANIMATION TRIGGER IN ANIMATOR
+            // ANIMATION TRIGGER IN ANIMATOR
         }
     }
 
