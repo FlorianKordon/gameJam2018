@@ -6,16 +6,16 @@ public class HauntedDelusion : Delusion
 {
     public override void DelusionCloseDown()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void DelusionContent()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void DelusionForecast()
     {
-        throw new System.NotImplementedException();
+
     }
 }

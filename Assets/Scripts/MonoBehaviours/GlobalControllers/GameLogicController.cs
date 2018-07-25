@@ -9,8 +9,15 @@ public class GameLogicController : MonoBehaviour
 {
     public event System.Action<bool> InputsInvertedEvent;
 
+    public event System.Action PlayerDiedEvent;
+
     public void NotifyInvertedInputs(bool inverted)
     {
         InputsInvertedEvent(inverted);
+    }
+
+    public void NotifyPlayerDeath()
+    {
+        PlayerDiedEvent();
     }
 }
