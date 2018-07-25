@@ -704,7 +704,6 @@ GameObject:
   - component: {fileID: 101897319}
   - component: {fileID: 101897318}
   - component: {fileID: 101897320}
-  - component: {fileID: 101897322}
   - component: {fileID: 101897321}
   m_Layer: 0
   m_Name: treppenelememt_003
@@ -719,13 +718,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400156, guid: a9605a18cb6012b41a346e3a6f3f04e5, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 101897316}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -3, y: -20, z: -6}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1669791494}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 930767725}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90}
 --- !u!23 &101897318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -827,26 +826,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &101897322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 101897316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippingThresholdAccelerometer: 1
-  flippingThresholdGyroX: 8
-  flippingThresholdGyroY: 4
-  rotationDuration: 1
-  rotationSpeed: 5
-  rotationValue: 90
-  rotationAxis: {x: 0, y: 1, z: 0}
-  gyroEnabled: 1
-  accelerometerEnabled: 0
 --- !u!1 &124157845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1011,6 @@ GameObject:
   - component: {fileID: 157917250}
   - component: {fileID: 157917249}
   - component: {fileID: 157917251}
-  - component: {fileID: 157917253}
   - component: {fileID: 157917252}
   m_Layer: 0
   m_Name: Cube_029
@@ -1047,13 +1025,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400058, guid: a9605a18cb6012b41a346e3a6f3f04e5, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 157917247}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -17, y: -13, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1669791494}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 434675903}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!23 &157917249
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1155,26 +1133,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &157917253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 157917247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippingThresholdAccelerometer: 1
-  flippingThresholdGyroX: 8
-  flippingThresholdGyroY: 4
-  rotationDuration: 1
-  rotationSpeed: 5
-  rotationValue: 90
-  rotationAxis: {x: 0, y: 1, z: 0}
-  gyroEnabled: 1
-  accelerometerEnabled: 0
 --- !u!1 &165578929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,7 +1584,6 @@ GameObject:
   - component: {fileID: 318191206}
   - component: {fileID: 318191205}
   - component: {fileID: 318191207}
-  - component: {fileID: 318191209}
   - component: {fileID: 318191208}
   m_Layer: 0
   m_Name: treppenelememt_004
@@ -1641,13 +1598,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400158, guid: a9605a18cb6012b41a346e3a6f3f04e5, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 318191203}
-  m_LocalRotation: {x: -0.5015162, y: 0.49847922, z: 0.4984792, w: 0.50151616}
-  m_LocalPosition: {x: -21, y: -21, z: -12}
+  m_LocalRotation: {x: -0.49956346, y: 0.5004362, z: 0.5004362, w: 0.49956346}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1669791494}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 815686269}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 90.10001}
 --- !u!23 &318191205
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1749,26 +1706,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &318191209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 318191203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippingThresholdAccelerometer: 1
-  flippingThresholdGyroX: 8
-  flippingThresholdGyroY: 4
-  rotationDuration: 1
-  rotationSpeed: 5
-  rotationValue: 90
-  rotationAxis: {x: 0, y: 1, z: 0}
-  gyroEnabled: 1
-  accelerometerEnabled: 0
 --- !u!1 &331600494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +1968,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 50, y: 50}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &372446522
 MonoBehaviour:
@@ -2251,6 +2188,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000012, y: 4, z: 2}
   m_Center: {x: 0.0000005364418, y: -1, z: 0}
+--- !u!1 &434675902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 434675903}
+  - component: {fileID: 434675904}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &434675903
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 434675902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17, y: -13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 157917248}
+  m_Father: {fileID: 1669791494}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434675904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 434675902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flippingThresholdAccelerometer: 1
+  flippingThresholdGyroX: 8
+  flippingThresholdGyroY: 4
+  rotationDuration: 1
+  rotationSpeed: 5
+  rotationValue: 90
+  rotationAxis: {x: 0, y: 1, z: 0}
+  gyroEnabled: 1
+  accelerometerEnabled: 0
 --- !u!1 &511380928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,7 +2427,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 800}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2486,6 +2473,156 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &815686268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 815686269}
+  - component: {fileID: 815686270}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &815686269
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815686268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21, y: -21, z: -12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 318191204}
+  m_Father: {fileID: 1669791494}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &815686270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815686268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flippingThresholdAccelerometer: 1
+  flippingThresholdGyroX: 8
+  flippingThresholdGyroY: 4
+  rotationDuration: 1
+  rotationSpeed: 5
+  rotationValue: 90
+  rotationAxis: {x: 0, y: 1, z: 0}
+  gyroEnabled: 1
+  accelerometerEnabled: 0
+--- !u!1 &817107271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 817107272}
+  - component: {fileID: 817107273}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &817107272
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817107271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7, y: -15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1587277141}
+  m_Father: {fileID: 1669791494}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &817107273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817107271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flippingThresholdAccelerometer: 1
+  flippingThresholdGyroX: 8
+  flippingThresholdGyroY: 4
+  rotationDuration: 1
+  rotationSpeed: 5
+  rotationValue: 90
+  rotationAxis: {x: 0, y: 1, z: 0}
+  gyroEnabled: 1
+  accelerometerEnabled: 0
+--- !u!1 &861339945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 861339946}
+  - component: {fileID: 861339947}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &861339946
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861339945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15, y: -17, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1183226143}
+  m_Father: {fileID: 1669791494}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861339947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861339945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flippingThresholdAccelerometer: 1
+  flippingThresholdGyroX: 8
+  flippingThresholdGyroY: 4
+  rotationDuration: 1
+  rotationSpeed: 5
+  rotationValue: 90
+  rotationAxis: {x: 0, y: 1, z: 0}
+  gyroEnabled: 1
+  accelerometerEnabled: 0
 --- !u!1 &877118180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2710,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000024, y: 6, z: 2}
   m_Center: {x: 0.0000011324883, y: -2, z: 0}
+--- !u!1 &930767724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 930767725}
+  - component: {fileID: 930767726}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &930767725
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930767724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: -20, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 101897317}
+  m_Father: {fileID: 1669791494}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &930767726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930767724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flippingThresholdAccelerometer: 1
+  flippingThresholdGyroX: 8
+  flippingThresholdGyroY: 4
+  rotationDuration: 1
+  rotationSpeed: 5
+  rotationValue: 90
+  rotationAxis: {x: 0, y: 1, z: 0}
+  gyroEnabled: 1
+  accelerometerEnabled: 0
 --- !u!1 &1024466479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,7 +3060,6 @@ GameObject:
   - component: {fileID: 1183226145}
   - component: {fileID: 1183226144}
   - component: {fileID: 1183226146}
-  - component: {fileID: 1183226148}
   - component: {fileID: 1183226147}
   m_Layer: 0
   m_Name: Cube_045
@@ -2888,13 +3074,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400090, guid: a9605a18cb6012b41a346e3a6f3f04e5, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1183226142}
-  m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: 0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: 15, y: -17, z: 4}
+  m_LocalRotation: {x: 0, y: -0.70710677, z: -0.70710677, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1669791494}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 861339946}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: -90.00001, z: -90.00001}
 --- !u!23 &1183226144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2996,26 +3182,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &1183226148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183226142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippingThresholdAccelerometer: 1
-  flippingThresholdGyroX: 8
-  flippingThresholdGyroY: 4
-  rotationDuration: 1
-  rotationSpeed: 5
-  rotationValue: 90
-  rotationAxis: {x: 0, y: 1, z: 0}
-  gyroEnabled: 1
-  accelerometerEnabled: 0
 --- !u!1 &1209976335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,7 +3193,6 @@ GameObject:
   - component: {fileID: 1209976338}
   - component: {fileID: 1209976337}
   - component: {fileID: 1209976339}
-  - component: {fileID: 1209976341}
   - component: {fileID: 1209976340}
   m_Layer: 0
   m_Name: Cube_052
@@ -3042,13 +3207,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400104, guid: a9605a18cb6012b41a346e3a6f3f04e5, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1209976335}
-  m_LocalRotation: {x: 0.49956346, y: 0.50043625, z: 0.50043625, w: -0.49956343}
-  m_LocalPosition: {x: -13, y: -20, z: -6}
+  m_LocalRotation: {x: -0.4995635, y: -0.5004361, z: -0.5004361, w: 0.4995635}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1669791494}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1606734774}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.10001}
 --- !u!23 &1209976337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3150,26 +3315,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &1209976341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1209976335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippingThresholdAccelerometer: 1
-  flippingThresholdGyroX: 8
-  flippingThresholdGyroY: 4
-  rotationDuration: 1
-  rotationSpeed: 5
-  rotationValue: 90
-  rotationAxis: {x: 0, y: 1, z: 0}
-  gyroEnabled: 1
-  accelerometerEnabled: 0
 --- !u!1 &1315303975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,7 +3792,6 @@ GameObject:
   - component: {fileID: 1587277143}
   - component: {fileID: 1587277142}
   - component: {fileID: 1587277144}
-  - component: {fileID: 1587277146}
   - component: {fileID: 1587277145}
   m_Layer: 0
   m_Name: Cube_027
@@ -3662,13 +3806,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400054, guid: a9605a18cb6012b41a346e3a6f3f04e5, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1587277140}
-  m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: 0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: -7, y: -15, z: 0}
+  m_LocalRotation: {x: -0.5, y: 0.50000006, z: 0.50000006, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1669791494}
+  m_Father: {fileID: 817107272}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 90.00001}
 --- !u!23 &1587277142
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3770,12 +3914,42 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &1587277146
+--- !u!1 &1606734773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1606734774}
+  - component: {fileID: 1606734775}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1606734774
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1606734773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13, y: -20, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1209976336}
+  m_Father: {fileID: 1669791494}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1606734775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1587277140}
+  m_GameObject: {fileID: 1606734773}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
@@ -3815,13 +3989,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1587277141}
-  - {fileID: 157917248}
-  - {fileID: 1183226143}
-  - {fileID: 2092588638}
-  - {fileID: 1209976336}
-  - {fileID: 101897317}
-  - {fileID: 318191204}
+  - {fileID: 817107272}
+  - {fileID: 434675903}
+  - {fileID: 861339946}
+  - {fileID: 1990157815}
+  - {fileID: 1606734774}
+  - {fileID: 930767725}
+  - {fileID: 815686269}
   m_Father: {fileID: 702557930}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3942,8 +4116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaf48901f1ffa043bd2a8440738bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 5
-  minDelay: 5
+  maxDelay: 60
+  minDelay: 30
   minDelayDecrease: 2
   maxDelayDecrease: 5
   maxDuration: 6
@@ -4268,6 +4442,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2.0000005, z: 2.0000005}
   m_Center: {x: 0, y: -1.1368684e-13, z: 0.0000019073486}
+--- !u!1 &1990157814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1990157815}
+  - component: {fileID: 1990157816}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990157815
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990157814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: -19, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2092588638}
+  m_Father: {fileID: 1669791494}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1990157816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990157814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flippingThresholdAccelerometer: 1
+  flippingThresholdGyroX: 8
+  flippingThresholdGyroY: 4
+  rotationDuration: 1
+  rotationSpeed: 5
+  rotationValue: 90
+  rotationAxis: {x: 0, y: 1, z: 0}
+  gyroEnabled: 1
+  accelerometerEnabled: 0
 --- !u!1 &2075566113
 GameObject:
   m_ObjectHideFlags: 0
@@ -4394,7 +4618,6 @@ GameObject:
   - component: {fileID: 2092588640}
   - component: {fileID: 2092588639}
   - component: {fileID: 2092588641}
-  - component: {fileID: 2092588643}
   - component: {fileID: 2092588642}
   m_Layer: 0
   m_Name: Cube_048
@@ -4409,13 +4632,13 @@ Transform:
   m_PrefabParentObject: {fileID: 400096, guid: a9605a18cb6012b41a346e3a6f3f04e5, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092588637}
-  m_LocalRotation: {x: -0.000000030908623, y: 0.7071068, z: 0.7071068, w: 0.000000030908623}
-  m_LocalPosition: {x: 1, y: -19, z: 4}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1669791494}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1990157815}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -180}
 --- !u!23 &2092588639
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4517,26 +4740,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!114 &2092588643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2092588637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd8603bcf90b5846812f4a555f03605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippingThresholdAccelerometer: 1
-  flippingThresholdGyroX: 8
-  flippingThresholdGyroY: 4
-  rotationDuration: 1
-  rotationSpeed: 5
-  rotationValue: 90
-  rotationAxis: {x: 0, y: 1, z: 0}
-  gyroEnabled: 1
-  accelerometerEnabled: 0
 --- !u!1 &2097631521
 GameObject:
   m_ObjectHideFlags: 0

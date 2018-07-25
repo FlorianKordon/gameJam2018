@@ -14,6 +14,7 @@ public class RotateablePlatform : Platform
 {
     // Platform utility
     public bool IsActivated { get; set; }
+    //public bool invertXAndYAxis = true;
     public float flippingThresholdAccelerometer = 1f;
     public float flippingThresholdGyroX = 8f;
     public float flippingThresholdGyroY = 4f;
@@ -50,10 +51,13 @@ public class RotateablePlatform : Platform
         IsRotatable = true;
         IsActivated = false;
 
-        _outline = GetComponent<Outline>();
-        _outline.enabled = false;
-
         gameObject.tag = _rotTag;
+
+        _outline = GetComponent<Outline>();
+        // if not existent, seach in children
+        if (_outline == null)
+            _outline = this.gameObject.transform.GetComponentInChildren<Outline>();
+        _outline.enabled = false;
     }
 
     private void Start()
@@ -113,7 +117,9 @@ public class RotateablePlatform : Platform
                 if (item != this.gameObject)
                 {
                     item.GetComponent<RotateablePlatform>().IsActivated = false;
-                    item.GetComponent<Outline>().enabled = false;
+                    Outline outline = item.GetComponent<Outline>();
+                    if (outline == null)
+                        outline = item.GetComponentInChildren<Outline>();
                 }
             }
         }
@@ -144,8 +150,11 @@ public class RotateablePlatform : Platform
         //Debug.Log(currentTiltDifference);
 
         // If flipping is detected, return true
+        //if (!invertXAndYAxis && Vector3.Equals(rotationAxis, new Vector3(0, 1, 0))
+        //   || (invertXAndYAxis && Vector3.Equals(rotationAxis, new Vector3(1, 0, 0))))
         if (Vector3.Equals(rotationAxis, new Vector3(0, 1, 0)))
         {
+            Debug.Log("asdlkjasdlkjasdlkjasdlkj");
             if (currentTiltDifference.y < flippingThresholdGyroY)
                 rotationDirection = RotationDirection.CLOCKWISE;
             else
@@ -189,7 +198,7 @@ public class RotateablePlatform : Platform
         // Overshoot target rotation by snapInAngle
         while (Quaternion.Angle(transform.rotation, targetRotation) >= 5)
         {
-            transform.rotation = Quaternion.Slerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
             yield return null;
         }
 
@@ -197,11 +206,11 @@ public class RotateablePlatform : Platform
         targetRotation = Quaternion.AngleAxis(currentRotation + rotationValue, rotationAxis);
         while (Quaternion.Angle(transform.rotation, targetRotation) >= 1E-5)
         {
-            transform.rotation = Quaternion.Slerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
             yield return null;
         }
 
-        transform.localRotation = (targetRotation);
+        transform.localRotation = targetRotation;
         Debug.Log("Rotation finished");
         isRotating = false;
     }
