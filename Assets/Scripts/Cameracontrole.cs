@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class Cameracontrole : MonoBehaviour {
+public class CameraControle : MonoBehaviour {
 
     public GameObject player;
     private Vector3 camdistance;
@@ -13,6 +13,9 @@ public class Cameracontrole : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Player");
+
+        transform.position = player.transform.position + new Vector3 (-19.5f,16.5f,-20f);
+
         camdistance =   player.transform.position - transform.position;
         Debug.Log("Camdistance" + camdistance );
     }
@@ -20,12 +23,13 @@ public class Cameracontrole : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Debug.Log(new Vector3(transform.position.x, transform.position.y, transform.position.z) );
+        //Debug.Log(new Vector3(transform.position.x, transform.position.y, transform.position.z) );
 
 
         //transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z)+ camdistance;
 
         transform.position = new Vector3(player.transform.position.x - camdistance.x, transform.position.y, player.transform.position.z - camdistance.z);
+        //transform.position = new Vector3(player.transform.position.x - camdistance.x, transform.position.y, player.transform.position.z - camdistance.z);
         //rigid.velocity = player.velocity;
     }
 }
