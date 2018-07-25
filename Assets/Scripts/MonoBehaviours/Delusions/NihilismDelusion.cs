@@ -29,10 +29,12 @@ public class NihilismDelusion : Delusion
     public override void DelusionContent()
     {
         _renderer.material = dissolveMaterial;
+        _glc.NotifyDelayedInputs(true);
     }
 
     public override void DelusionCloseDown()
     {
         _renderer.material = _baseMaterial;
+        _glc.NotifyDelayedInputs(false);
     }
 }

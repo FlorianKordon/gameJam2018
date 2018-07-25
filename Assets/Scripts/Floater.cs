@@ -1,99 +1,39 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestFloat : MonoBehaviour
+public class Floater : MonoBehaviour
 {
-
-    private Vector3 startpos;
-
-    //public Transform endpos;
-    public Vector3 endpos;
-
-
+    public Transform EndPositionTransform;
     public float speed;
-    public float acceleration;
 
-    private bool inversemovement = true;
-    public bool dcb = false;
+    private Vector3 startPosition;
 
     // Use this for initialization
     void Start()
     {
-
-        // Instantiate(emptyGameObjectPrefab, transform.position + , Quaternion.identity);
-
-        startpos = transform.localPosition;
-        //objToSpawn = new GameObject("Cool GameObject made from Code");
-
-        StartCoroutine(Movement());
+        startPosition = transform.localPosition;
+        StartCoroutine(MovementDir());
     }
 
-    IEnumerator Movement()
+    IEnumerator MovementDir()
     {
-        while ((endpos - transform.localPosition).magnitude >= 1f)
+        //yield return new WaitForSeconds(1);
+        while (Vector3.Distance(EndPositionTransform.localPosition, transform.localPosition) >= 0.5f)
         {
-            //transform.localPosition = transform.localPosition + (endpos - transform.localPosition) * 0.01f * speed;
-            transform.localPosition = Vector3.Slerp(transform.localPosition, endpos, 0.01f * speed);
-        }
-
-        yield return new WaitForSeconds(3);
-
-        Debug.Log(startpos - transform.localPosition );
-
-        while ((startpos - transform.localPosition ).magnitude >= 1f)
-        {
-            //transform.localPosition = transform.localPosition + (startpos - transform.localPosition) * 0.01f * speed;
-            transform.localPosition = Vector3.Slerp(transform.localPosition, startpos, 0.01f * speed);
+            Debug.Log("Endposition: " + EndPositionTransform.localPosition);
+            Debug.Log("Cube Position: " + transform.localPosition);
+            transform.localPosition = Vector3.Slerp(transform.localPosition, EndPositionTransform.localPosition, 0.01f);
             yield return null;
         }
+        //yield return new WaitForSeconds(1);
 
-        yield return new WaitForSeconds(3);
-        StartCoroutine(Movement());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /* 
-        if (inversemovement)
+        while (Vector3.Distance(startPosition, transform.localPosition) >= 0.5f)
         {
-            //Move to endpos
-            transform.localPosition = transform.localPosition + (endpos - transform.localPosition) * 0.01f * speed;
-
-            if ((endpos - transform.localPosition).magnitude < 1f)
-                Debug.Log("Wechsel startet");
-
-            if ((endpos - transform.localPosition).magnitude < 1f)
-            {
-
-                Invoke("Dirchange", 3);
-                dcb = !dcb;
-                StartCoroutine(DirectionChangeBlock());
-            }
+            transform.localPosition = Vector3.Slerp(transform.localPosition, startPosition, 0.01f);
+            yield return null;
         }
-        else
-        {
-            //Move to startpos
-            transform.localPosition = transform.localPosition + (startpos - transform.localPosition) * 0.01f * speed;
-
-            if ((startpos - transform.localPosition).magnitude < 1f)
-                Invoke("Dirchange", 3);
-            dcb = !dcb;
-            StartCoroutine(DirectionChangeBlock());
-        }*/
-
-    }
-
-    private void DirChange()
-    {
-        inversemovement = !inversemovement;
-    }
-
-
-
-    private void DirChangeBlocker()
-    {
-
+        StartCoroutine(MovementDir());
     }
 }

@@ -11,6 +11,8 @@ public class GameLogicController : MonoBehaviour
 
     public event System.Action<bool> InputsDelayedEvent;
 
+    public event System.Action<bool> InputsDisabledEvent;
+
     public event System.Action PlayerDiedEvent;
 
     public void NotifyInvertedInputs(bool inverted)
@@ -21,8 +23,14 @@ public class GameLogicController : MonoBehaviour
 
     public void NotifyDelayedInputs(bool delayed)
     {
-        if (InputsInvertedEvent != null)
+        if (InputsDelayedEvent != null)
             InputsDelayedEvent(delayed);
+    }
+
+    public void NotifyDisabledInputs(bool disabled)
+    {
+        if (InputsDisabledEvent != null)
+            InputsDisabledEvent(disabled);
     }
 
     public void NotifyPlayerDeath()

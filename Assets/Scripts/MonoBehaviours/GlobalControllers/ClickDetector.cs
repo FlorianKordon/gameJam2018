@@ -5,7 +5,14 @@ using UnityEngine.EventSystems;
 
 public class ClickDetector : MonoBehaviour
 {
-    void Update()
+    // GLOBAL CONTROLLERS
+    private GameLogicController _glc;
+
+    private void Start()
+    {
+        _glc = FindObjectOfType<GameLogicController>();
+    }
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -14,7 +21,7 @@ public class ClickDetector : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100)) // or whatever range, if applicable
             {
                 GameObject go = hit.transform.gameObject;
-                if (hit.transform.gameObject.tag == "Rotateable")
+                if (go.tag == "Rotateable")
                 {
                     go.GetComponent<RotateablePlatform>().OnInteraction();
                 }
@@ -25,6 +32,7 @@ public class ClickDetector : MonoBehaviour
                 {
                     item.GetComponent<RotateablePlatform>().IsActivated = false;
                     item.GetComponent<Outline>().enabled = false;
+                    _glc.NotifyDisabledInputs(false);
                 }
             }
         }

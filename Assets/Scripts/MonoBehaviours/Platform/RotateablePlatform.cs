@@ -34,6 +34,9 @@ public class RotateablePlatform : Platform
     // Outline Highlighting
     private Outline _outline;
 
+    // Global Controllers
+    private GameLogicController _glc;
+
     ////////////////
     // Accelerometer/Gyro support
 
@@ -53,16 +56,17 @@ public class RotateablePlatform : Platform
         gameObject.tag = _rotTag;
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
         // If the system does not support the accelerometer, end update routine
         if (!SystemInfo.supportsGyroscope)
         {
             gyroEnabled = false;
-            yield break;
         }
         gyroEnabled = true;
         Input.gyro.enabled = true;
+
+        _glc = FindObjectOfType<GameLogicController>();
     }
 
     private void Update()
@@ -93,6 +97,9 @@ public class RotateablePlatform : Platform
         // When the platform currently is activated, an additional click should deactivate it;
         // If the platform currently is not activated, we want to activate it for rotation.
         IsActivated = !IsActivated;
+
+        // Notify all event listeners via the game logic controller
+        _glc.NotifyDisabledInputs(IsActivated);
 
         if (IsActivated)
         {
