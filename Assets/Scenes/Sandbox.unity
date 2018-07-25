@@ -218,7 +218,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 205753313}
-          m_MethodName: OnInteraction
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -930,7 +930,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1780736001}
-          m_MethodName: OnInteraction
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -995,6 +995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1808900732}
   - component: {fileID: 1808900733}
+  - component: {fileID: 1808900734}
   m_Layer: 0
   m_Name: CameraContainer
   m_TagString: Untagged
@@ -1025,6 +1026,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 330c0e7e563f05f419fb72fa3811858c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1808900734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808900731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e305f4ec9435c7343a23cb606c3e8f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1871224191
