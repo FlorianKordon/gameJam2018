@@ -24,7 +24,7 @@ public class RotateablePlatform : Platform
     // Platform 
     private bool isRotating = false;
     private Vector3 baseTilt;
-    private Quaternion baseRotation;
+    //private Quaternion baseRotation;
     private int snapInAngle = 10;
     private RotationDirection rotationDirection = RotationDirection.CLOCKWISE;
 
@@ -35,21 +35,7 @@ public class RotateablePlatform : Platform
     // Calibration
     public bool gyroEnabled = true;
     public bool accelerometerEnabled = false;
-    public bool useYAngleCalibration = true;
-    public bool useXAngleCalibration = false;
-    public bool useMicrophoneInput = true;
 
-    // State holding
-    private float initialYAngle = 0f;
-    private float initialXAngle = 0f;
-    private float appliedGyroYAngle = 0f;
-    private float appliedGyroXAngle = 0f;
-    private float calibrationYAngle = 0f;
-    private float calibrationXAngle = 0f;
-    private float smoothingFactor = 0.1f;
-    private float tempSmoothingFactor = 0.0f;
-    private const float setupWaitingTime = 0.1f;
-    private Transform rawGyroRotation;
 
     private void Awake()
     {
@@ -67,15 +53,6 @@ public class RotateablePlatform : Platform
             gyroEnabled = false;
             yield break;
         }
-        // If gyro is supported, we assume that there is a mic too
-        // Initialize gyroscope
-        InitializeGyro();
-
-        // Wait until gyro is active, then calibrate to reset starting rotation.
-        yield return new WaitForSeconds(setupWaitingTime);
-
-        // As we don't need to wait for the calibration, we can omit the yield return here
-        StartCoroutine(CalibrateGyroAngels());
     }
 
     private void Update()
@@ -112,9 +89,6 @@ public class RotateablePlatform : Platform
         {
             if (accelerometerEnabled)
                 baseTilt = Input.acceleration;
-
-            if (gyroEnabled)
-                baseRotation = rawGyroRotation.rotation;
         }
     }
 
@@ -201,68 +175,5 @@ public class RotateablePlatform : Platform
         transform.localRotation = (targetRotation);
         Debug.Log("Rotation finished");
         isRotating = false;
-    }
-
-    ///////////////////////////////////////////////////
-    // Gyro, calibration adapted from https://gist.github.com/kormyen/a1e3c144a30fc26393f14f09989f03e1 
-    // CURRENTLY NOT USED
-    private void InitializeGyro()
-    {
-        gyroEnabled = true;
-        Input.gyro.enabled = true;
-
-        // In order to recalibrate our camera position, we need a reference to the initial x and y values.
-        initialYAngle = transform.eulerAngles.y;
-        initialXAngle = transform.eulerAngles.x;
-
-        // Initialize our transform object where we do the rotation calculations on
-        rawGyroRotation = new GameObject("GyroRaw").transform;
-        rawGyroRotation.position = transform.position;
-        rawGyroRotation.rotation = transform.rotation;
-    }
-
-    private IEnumerator CalibrateGyroAngels()
-    {
-        if (!useYAngleCalibration && !useXAngleCalibration)
-            yield break;
-
-        tempSmoothingFactor = smoothingFactor;
-
-        // As we want to directly set our calibrated value without any slerping going on, we set our factor to 1
-        smoothingFactor = 1;
-
-        // Offsets the y angle in case it wasn't 0 at edit time.
-        if (useYAngleCalibration)
-            calibrationYAngle = appliedGyroYAngle - initialYAngle;
-
-        // Offsets the x angle in case it wasn't 0 at edit time.
-        if (useXAngleCalibration)
-            calibrationXAngle = appliedGyroXAngle - initialXAngle;
-
-        // Wait for one frame, then continue
-        yield return null;
-
-        // After the frame, we want to reset our smoothing factor
-        smoothingFactor = tempSmoothingFactor;
-    }
-
-    private void ApplyGyroRotation()
-    {
-        rawGyroRotation.rotation = Input.gyro.attitude;
-        // Swap "handedness" of quaternion from gyro, as the gyro is right-handed, Unity is left-handed.
-        rawGyroRotation.Rotate(0f, 0f, 180f, Space.Self);
-        // Rotate to make sense as a camera pointing out the back of the device.
-        rawGyroRotation.Rotate(90f, 180f, 0f, Space.World);
-        // Save the angle around y axis for use in calibration.
-        appliedGyroYAngle = rawGyroRotation.eulerAngles.y;
-        appliedGyroXAngle = rawGyroRotation.eulerAngles.x;
-    }
-
-    private void ApplyCalibration()
-    {
-        rawGyroRotation.Rotate(0f, -calibrationYAngle, 0f, Space.World);
-        rawGyroRotation.Rotate(-calibrationXAngle, 0f, 0f, Space.World);
-    }
-    // CURRENTLY NOT USED
-    ///////////////////////////////////////////////////
+    }    
 }

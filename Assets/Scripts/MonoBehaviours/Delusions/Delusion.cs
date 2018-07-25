@@ -15,7 +15,8 @@ public abstract class Delusion : MonoBehaviour
 
     public int maxDelay = 60;
     public int minDelay = 45;
-    public int delayDecrease = 2;
+    public int minDelayDecrease = 2;
+    public int maxDelayDecrease = 5;
 
     public int maxDuration = 10;
     public int minDuration = 5;
@@ -34,12 +35,19 @@ public abstract class Delusion : MonoBehaviour
         Duration = rnd.Next(minDuration, maxDuration);
         VibrationForecastTime = rnd.Next(1, 3);
 
-        // Wait for the scheduled delay time
-        yield return new WaitForSeconds(encounterDelay - VibrationForecastTime);
-        DelusionForecast();
+        if (encounterDelay > VibrationForecastTime)
+        {
+            // Wait for the scheduled delay time
+            yield return new WaitForSeconds(encounterDelay - VibrationForecastTime);
+            DelusionForecast();
 
-        // After waiting for the scheduled delay time, execute delusion content
-        yield return new WaitForSeconds(VibrationForecastTime);
+            // After waiting for the scheduled delay time, execute delusion content
+            yield return new WaitForSeconds(VibrationForecastTime);
+        }
+        else if (encounterDelay > 0)
+        {
+            yield return new WaitForSeconds(VibrationForecastTime);
+        }
         DelusionContent();
         isCurrentlyActive = true;
 
@@ -54,7 +62,11 @@ public abstract class Delusion : MonoBehaviour
         // Call clean up code for dilusion
         DelusionCloseDown();
 
+        // Generate new random value for delay decrease
+        System.Random rnd = new System.Random();
+        int currentDelayDecrease = rnd.Next(minDelayDecrease, maxDelayDecrease);
+
         // Recursivly start delusion again with a little decease in the delay.
-        StartCoroutine(StartDelusion(EncounterDelay - delayDecrease));
+        StartCoroutine(StartDelusion(EncounterDelay - currentDelayDecrease));
     }
 }
