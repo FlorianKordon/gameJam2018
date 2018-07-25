@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum RotationDirection
 {
@@ -24,11 +25,15 @@ public class RotateablePlatform : Platform
     // Platform 
     private bool isRotating = false;
     private Vector3 baseTilt;
+    private const string _rotTag = "Rotateable";
+
     //private Quaternion baseRotation;
     private int snapInAngle = 10;
     private RotationDirection rotationDirection = RotationDirection.CLOCKWISE;
 
-    //
+    // Outline Highlighting
+    private Outline _outline;
+
     ////////////////
     // Accelerometer/Gyro support
 
@@ -42,7 +47,10 @@ public class RotateablePlatform : Platform
         IsRotatable = true;
         IsActivated = false;
 
-        gameObject.tag = "Rotateable";
+        _outline = GetComponent<Outline>();
+        _outline.enabled = false;
+
+        gameObject.tag = _rotTag;
     }
 
     private IEnumerator Start()
@@ -53,10 +61,13 @@ public class RotateablePlatform : Platform
             gyroEnabled = false;
             yield break;
         }
+        gyroEnabled = true;
+        Input.gyro.enabled = true;
     }
 
     private void Update()
     {
+        //Debug.Log(Input.gyro.attitude);
         // If platform is activated and is not currently rotating, start rotate routine
         if (IsActivated && !isRotating && (accelerometerEnabled || gyroEnabled))
         {
@@ -67,7 +78,6 @@ public class RotateablePlatform : Platform
             else if (accelerometerEnabled && CheckAccelerometerMobileFlipGesture())
                 StartCoroutine(RotatePlatform(rotationValue, rotationAxis, RotationDirection.CLOCKWISE));
         }
-
 
         if (IsActivated && Input.GetKeyDown(KeyCode.Z) && !isRotating)
         {
@@ -83,13 +93,25 @@ public class RotateablePlatform : Platform
         // When the platform currently is activated, an additional click should deactivate it;
         // If the platform currently is not activated, we want to activate it for rotation.
         IsActivated = !IsActivated;
-        Debug.Log("IsActivated: " + IsActivated);
 
         if (IsActivated)
         {
+            // If using the accelerometer, we need a baseTilt value to compute the difference
             if (accelerometerEnabled)
                 baseTilt = Input.acceleration;
+
+            // Search all rotatable objects by tag
+            foreach (GameObject item in GameObject.FindGameObjectsWithTag(_rotTag))
+            {
+                if (item != this.gameObject)
+                {
+                    item.GetComponent<RotateablePlatform>().IsActivated = false;
+                    item.GetComponent<Outline>().enabled = false;
+                }
+            }
         }
+        // Mark current object by outline
+        _outline.enabled = IsActivated;
     }
 
     private bool CheckAccelerometerMobileFlipGesture()
@@ -112,7 +134,7 @@ public class RotateablePlatform : Platform
     private bool CheckGyroMobileFlipGesture()
     {
         Vector3 currentTiltDifference = Input.gyro.rotationRate;
-        Debug.Log(currentTiltDifference);
+        //Debug.Log(currentTiltDifference);
 
         // If flipping is detected, return true
         if (Vector3.Equals(rotationAxis, new Vector3(0, 1, 0)))
@@ -175,5 +197,5 @@ public class RotateablePlatform : Platform
         transform.localRotation = (targetRotation);
         Debug.Log("Rotation finished");
         isRotating = false;
-    }    
+    }
 }

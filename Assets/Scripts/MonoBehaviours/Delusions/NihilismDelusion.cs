@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class NihilismDelusion : Delusion
 {
-    public override void DelusionCloseDown()
-    {
-        throw new System.NotImplementedException();
-    }
+    public GameObject playerCharacter;
+    public Material dissolveMaterial;
 
-    public override void DelusionContent()
+    private Renderer _renderer;
+    private Material _baseMaterial;
+
+    private GameLogicController _glc;
+
+    private void Start()
     {
-        throw new System.NotImplementedException();
+        _renderer = playerCharacter.GetComponent<Renderer>();
+        _baseMaterial = _renderer.material;
+
+        _glc = FindObjectOfType<GameLogicController>();
     }
 
     public override void DelusionForecast()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Vibration Forecast");
+        Handheld.Vibrate();
+    }
+
+    public override void DelusionContent()
+    {
+        _renderer.material = dissolveMaterial;
+    }
+
+    public override void DelusionCloseDown()
+    {
+        _renderer.material = _baseMaterial;
     }
 }
