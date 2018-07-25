@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Testballrespawn : MonoBehaviour {
+public class Respawner : MonoBehaviour {
     private Vector3 respawn;
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class Testballrespawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (transform.position.y <= -3)
+		if (transform.position.y <= respawn.y -10)
         {
             transform.position = respawn;
         }

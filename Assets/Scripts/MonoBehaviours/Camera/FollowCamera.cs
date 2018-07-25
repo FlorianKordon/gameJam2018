@@ -6,8 +6,7 @@ public class BasicCameraControl : MonoBehaviour
     public bool moveCamera = true;                         
     public float smoothing = 7f;                        
     public Vector3 offset = new Vector3 (0f, 1.5f, 0f); 
-    public Transform playerPosition;                    
-
+    public Transform playerPosition;    
 
     private IEnumerator Start ()
     {
@@ -18,7 +17,6 @@ public class BasicCameraControl : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(playerPosition.position - transform.position + offset);
     }
 
-    // LateUpdate is used so that all position updates have happened before the camera aims.
     private void LateUpdate ()
     {
         if (!moveCamera)
