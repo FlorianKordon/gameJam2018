@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: a912172646c441d4eb8b2535cefbd93b
+  - enabled: 1
+    path: Assets/Scenes/20180724_TestJoystick.unity
+    guid: d892d1955d4b0d548b9292bd8f5dbb56
   m_configObjects: {}
