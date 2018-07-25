@@ -24,11 +24,15 @@ public class RotateablePlatform : Platform
     // Platform 
     private bool isRotating = false;
     private Vector3 baseTilt;
+    private const string _rotTag = "Rotateable";
+
     //private Quaternion baseRotation;
     private int snapInAngle = 10;
     private RotationDirection rotationDirection = RotationDirection.CLOCKWISE;
 
-    //
+    // Outline Highlighting
+    private Outline _outline;
+
     ////////////////
     // Accelerometer/Gyro support
 
@@ -42,7 +46,10 @@ public class RotateablePlatform : Platform
         IsRotatable = true;
         IsActivated = false;
 
-        gameObject.tag = "Rotateable";
+        _outline = GetComponent<Outline>();
+        _outline.enabled = false;
+
+        gameObject.tag = _rotTag;
     }
 
     private IEnumerator Start()
@@ -85,13 +92,25 @@ public class RotateablePlatform : Platform
         // When the platform currently is activated, an additional click should deactivate it;
         // If the platform currently is not activated, we want to activate it for rotation.
         IsActivated = !IsActivated;
-        Debug.Log("IsActivated: " + IsActivated);
 
         if (IsActivated)
         {
+            // If using the accelerometer, we need a baseTilt value to compute the difference
             if (accelerometerEnabled)
                 baseTilt = Input.acceleration;
+
+            // Search all rotatable objects by tag
+            foreach (GameObject item in GameObject.FindGameObjectsWithTag(_rotTag))
+            {
+                if (item != this.gameObject)
+                {
+                    item.GetComponent<RotateablePlatform>().IsActivated = false;
+                    item.GetComponent<Outline>().enabled = false;
+                }
+            }
         }
+        // Mark current object by outline
+        _outline.enabled = IsActivated;
     }
 
     private bool CheckAccelerometerMobileFlipGesture()

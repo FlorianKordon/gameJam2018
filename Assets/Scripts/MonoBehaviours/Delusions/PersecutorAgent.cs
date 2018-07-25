@@ -105,6 +105,7 @@ public class PersecutorAgent : MonoBehaviour
         if (Vector3.Distance(playerCharacter.transform.position, transform.position) <= killDistance)
         {
             _glc.NotifyPlayerDeath();
+            StopHaunting();
             // ANIMATION TRIGGER IN ANIMATOR
         }
     }
