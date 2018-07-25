@@ -68,9 +68,9 @@ public class PersecutorAgent : MonoBehaviour
 
         Vector3 spawnPosition = SamplePosition(DetermineSpawningPointWorldPos());
 
-        Debug.Log("World Pos: " + DetermineSpawningPointWorldPos());
-        Debug.Log("Spawn Pos: " + spawnPosition);
-        Debug.Log("Player Pos: " + playerCharacter.transform.position);
+        //Debug.Log("World Pos: " + DetermineSpawningPointWorldPos());
+        //Debug.Log("Spawn Pos: " + spawnPosition);
+        //Debug.Log("Player Pos: " + playerCharacter.transform.position);
         Quaternion rotationToPlayerChar = Quaternion.LookRotation(playerCharacter.transform.position, Vector3.up);
 
         agent.Warp(spawnPosition);

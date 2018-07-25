@@ -53,10 +53,13 @@ public class RotateablePlatform : Platform
             gyroEnabled = false;
             yield break;
         }
+        gyroEnabled = true;
+        Input.gyro.enabled = true;
     }
 
     private void Update()
     {
+        Debug.Log(Input.gyro.attitude);
         // If platform is activated and is not currently rotating, start rotate routine
         if (IsActivated && !isRotating && (accelerometerEnabled || gyroEnabled))
         {
@@ -67,7 +70,6 @@ public class RotateablePlatform : Platform
             else if (accelerometerEnabled && CheckAccelerometerMobileFlipGesture())
                 StartCoroutine(RotatePlatform(rotationValue, rotationAxis, RotationDirection.CLOCKWISE));
         }
-
 
         if (IsActivated && Input.GetKeyDown(KeyCode.Z) && !isRotating)
         {
@@ -112,7 +114,7 @@ public class RotateablePlatform : Platform
     private bool CheckGyroMobileFlipGesture()
     {
         Vector3 currentTiltDifference = Input.gyro.rotationRate;
-        Debug.Log(currentTiltDifference);
+        //Debug.Log(currentTiltDifference);
 
         // If flipping is detected, return true
         if (Vector3.Equals(rotationAxis, new Vector3(0, 1, 0)))
@@ -175,5 +177,5 @@ public class RotateablePlatform : Platform
         transform.localRotation = (targetRotation);
         Debug.Log("Rotation finished");
         isRotating = false;
-    }    
+    }
 }

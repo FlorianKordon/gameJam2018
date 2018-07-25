@@ -14,13 +14,13 @@ public class HauntedDelusion : Delusion
 
     public override void DelusionContent()
     {
-        Debug.Log("Start Hunting");
+        // Debug.Log("Start Hunting");
         persecutor.SpawnAndHaunt();
     }
 
     public override void DelusionCloseDown()
     {
-        Debug.Log("Stop Hunting");
+        //Debug.Log("Stop Hunting");
         persecutor.StopHaunting();
     }
 }
