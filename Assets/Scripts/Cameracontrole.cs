@@ -28,7 +28,7 @@ public class CameraControle : MonoBehaviour {
 
         //transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z)+ camdistance;
 
-        transform.position = new Vector3(player.transform.position.x - camdistance.x, transform.position.y, player.transform.position.z - camdistance.z);
+        transform.position = new Vector3(player.transform.position.x - camdistance.x, player.transform.position.y + 16.5f, player.transform.position.z - camdistance.z);
         //transform.position = new Vector3(player.transform.position.x - camdistance.x, transform.position.y, player.transform.position.z - camdistance.z);
         //rigid.velocity = player.velocity;
     }
