@@ -11,6 +11,7 @@ public class ClickDetector : MonoBehaviour
     private void Start()
     {
         _glc = FindObjectOfType<GameLogicController>();
+
     }
     private void Update()
     {
@@ -18,23 +19,42 @@ public class ClickDetector : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100)) // or whatever range, if applicable
+
+            // We don't want to detect a raycast hit when we click on the ui elements
+            // see for touch difficulties https://answers.unity.com/questions/895861/ui-system-not-blocking-raycasts-on-mobile-only.html
+            if (!IsPointerOverUIObject() && Physics.Raycast(ray, out hit, 100)) // or whatever range, if applicable
             {
                 GameObject go = hit.transform.gameObject;
+
+                // if the hit gameobject or its parent (empty to fix right handed coordinate system) got tag rotateable
                 if (go.tag == "Rotateable")
-                {
                     go.GetComponent<RotateablePlatform>().OnInteraction();
-                }
+                else if (go.transform.parent.tag == "Rotateable")
+                    go.GetComponentInParent<RotateablePlatform>().OnInteraction();
             }
             else
             {
                 foreach (GameObject item in GameObject.FindGameObjectsWithTag("Rotateable"))
                 {
                     item.GetComponent<RotateablePlatform>().IsActivated = false;
-                    item.GetComponent<Outline>().enabled = false;
+                    Outline outline = item.GetComponent<Outline>();
+                    if (outline == null)
+                        outline = item.GetComponentInChildren<Outline>();
+                    outline.enabled = false;
                     _glc.NotifyDisabledInputs(false);
                 }
             }
         }
+    }
+
+    // https://answers.unity.com/questions/1115464/ispointerovergameobject-not-working-with-touch-inp.html
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+        return results.Count > 0;
     }
 }
