@@ -59,7 +59,7 @@ public class RotateablePlatform : Platform
 
     private void Update()
     {
-        Debug.Log(Input.gyro.attitude);
+        //Debug.Log(Input.gyro.attitude);
         // If platform is activated and is not currently rotating, start rotate routine
         if (IsActivated && !isRotating && (accelerometerEnabled || gyroEnabled))
         {

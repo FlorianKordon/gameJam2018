@@ -5,16 +5,15 @@ using UnityEngine;
 public class NihilismDelusion : Delusion
 {
     public GameObject playerCharacter;
+    public Material dissolveMaterial;
 
-    private Material _baseMat;
-    private Shader _baseShader;
-    private Shader _delusionShader;
+    private Renderer _renderer;
+    private Material _baseMaterial;
 
     private void Start()
     {
-        _baseMat = playerCharacter.GetComponent<Renderer>().material;
-        _baseShader = Shader.Find("");
-        _delusionShader = Shader.Find("");
+        _renderer = playerCharacter.GetComponent<Renderer>();
+        _baseMaterial = _renderer.material;
     }
 
     public override void DelusionForecast()
@@ -25,11 +24,11 @@ public class NihilismDelusion : Delusion
 
     public override void DelusionContent()
     {
-        //_rend =
+       _renderer.material = dissolveMaterial;
     }
 
     public override void DelusionCloseDown()
     {
-        throw new System.NotImplementedException();
+       _renderer.material = _baseMaterial;
     }
 }
