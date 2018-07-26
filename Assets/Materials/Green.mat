@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Orange
+  m_Name: Green
   m_Shader: {fileID: 4800000, guid: b3a0b4d4c6e44ad44b45ea0028dcda3c, type: 3}
   m_ShaderKeywords: BACKSOLID BOTTOMSOLID FRONTSOLID LEFTSOLID RIGHTSOLID TOPSOLID
     _AOUV_UV0 _GRADIENTSPACE_WORLD_SPACE _GRADSETTINGS_B_USE_GLOBAL _GRADSETTINGS_D_USE_GLOBAL
@@ -149,12 +149,12 @@ Material:
     - _AOColor: {r: 1, g: 1, b: 1, a: 1}
     - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_B: {r: 0.65882355, g: 0.43529415, b: 0.23529413, a: 1}
-    - _Color1_D: {r: 0.6627451, g: 0.3921569, b: 0.3019608, a: 1}
-    - _Color1_F: {r: 0.9607844, g: 0.6313726, b: 0.3372549, a: 1}
-    - _Color1_L: {r: 0.9686275, g: 0.8431373, b: 0.53333336, a: 1}
-    - _Color1_R: {r: 0.65882355, g: 0.5372549, b: 0.2901961, a: 1}
-    - _Color1_T: {r: 0.95294124, g: 0.60784316, b: 0.53333336, a: 1}
+    - _Color1_B: {r: 0.30980393, g: 0.46274513, b: 0.3372549, a: 1}
+    - _Color1_D: {r: 0.3803922, g: 0.46274513, b: 0.34901962, a: 1}
+    - _Color1_F: {r: 0.49803925, g: 0.7607844, b: 0.54901963, a: 1}
+    - _Color1_L: {r: 0.6901961, g: 0.80392164, b: 0.7960785, a: 1}
+    - _Color1_R: {r: 0.3529412, g: 0.46274513, b: 0.427451, a: 1}
+    - _Color1_T: {r: 0.7372549, g: 0.80392164, b: 0.6901961, a: 1}
     - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_F: {r: 1, g: 1, b: 1, a: 1}
