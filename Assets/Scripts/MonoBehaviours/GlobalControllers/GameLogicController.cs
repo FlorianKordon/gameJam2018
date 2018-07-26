@@ -42,8 +42,9 @@ public class GameLogicController : MonoBehaviour
 
     public void NotifyInvertedInputs(bool inverted)
     {
+        Debug.Log("InvertedNotification: " + inverted);
         _inputsInverted = inverted;
-        DelusionActive = _inputsInverted || _inputsDelayed || _inputsDisabled;
+        DelusionActive = _inputsInverted || _inputsDelayed;
         if (InputsInvertedEvent != null)
         {
             _inputsInverted = inverted;
@@ -53,8 +54,9 @@ public class GameLogicController : MonoBehaviour
 
     public void NotifyDelayedInputs(bool delayed)
     {
+        Debug.Log("DelayedNotification: " + delayed);
         _inputsDelayed = delayed;
-        DelusionActive = _inputsInverted || _inputsDelayed || _inputsDisabled;
+        DelusionActive = _inputsInverted || _inputsDelayed;
         if (InputsDelayedEvent != null)
         {
             _inputsDelayed = delayed;
@@ -64,8 +66,9 @@ public class GameLogicController : MonoBehaviour
 
     public void NotifyDisabledInputs(bool disabled)
     {
+        Debug.Log("DisabledNotification: " + disabled);
         _inputsDisabled = disabled;
-        DelusionActive = _inputsInverted || _inputsDelayed || _inputsDisabled;
+        DelusionActive = _inputsInverted || _inputsDelayed;
         if (InputsDisabledEvent != null)
         {
             InputsDisabledEvent(disabled);

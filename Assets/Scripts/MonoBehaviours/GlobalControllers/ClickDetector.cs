@@ -40,9 +40,9 @@ public class ClickDetector : MonoBehaviour
                     Outline outline = item.GetComponent<Outline>();
                     if (outline == null)
                         outline = item.GetComponentInChildren<Outline>();
-                    outline.enabled = false;
-                    _glc.NotifyDisabledInputs(false);
+                    outline.enabled = false;                    
                 }
+                _glc.NotifyDisabledInputs(false);
             }
         }
     }

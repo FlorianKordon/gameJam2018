@@ -8,7 +8,7 @@ public class PersecutorAgent : MonoBehaviour
 {
     public GameObject playerCharacter;
     public bool IsHaunting { get; set; }
-    public float killDistance = 1f;
+    public float killDistance = 2f;
     public float speedMultiplier = 1.2f;
     public float speedIncrease = 0.05f;
 
@@ -19,6 +19,7 @@ public class PersecutorAgent : MonoBehaviour
     public float maxDistanceToPlayerChar = 5f;
 
     private Vector3 destinationPosition;
+    private Vector3 waitingPosition;
     private const float navMeshSampleDistance = 10f;
     private float baseSpeed;
 
@@ -45,10 +46,17 @@ public class PersecutorAgent : MonoBehaviour
         _meshRend.enabled = false;
 
         baseSpeed = agent.speed;
+
+        // Save waiting position for persecutor to go back to it after hunt
+        waitingPosition = transform.position;
     }
 
     private void Update()
     {
+        // Check if persecutor should kill player
+        if (IsHaunting)
+            CheckPlayerKill();
+
         if (agent.pathPending || !IsHaunting)
             return;
 
@@ -56,9 +64,6 @@ public class PersecutorAgent : MonoBehaviour
 
         // Set animator parameter to the current speed of the nav mesh agent and damp it out with speedDampTime * Time.deltaTime
         animator.SetFloat(hashSpeedParam, speed, speedDampTime, Time.deltaTime);
-
-        // Check if persecutor should kill player
-        CheckPlayerKill();
     }
 
     public void SpawnAndHaunt()
@@ -85,24 +90,27 @@ public class PersecutorAgent : MonoBehaviour
 
     public void StopHaunting()
     {
-        CancelInvoke();
-
+        Debug.Log("Stop Hunting");
+        agent.Warp(waitingPosition);
         IsHaunting = false;
         agent.enabled = false;
         _meshRend.enabled = false;
         agent.speed = baseSpeed;
+
+        CancelInvoke("FollowAndHauntPlayer");
     }
 
     private void FollowAndHauntPlayer()
     {
         agent.SetDestination(SamplePosition(playerCharacter.transform.position));
-        agent.speed += (speedIncrease*speedMultiplier);
+        agent.speed += (speedIncrease * speedMultiplier);
     }
 
     private void CheckPlayerKill()
     {
         // Check if persecutor is in killing range of player character
-        if (Vector3.Distance(playerCharacter.transform.position, transform.position) <= killDistance)
+        Debug.Log(Vector3.Distance(playerCharacter.transform.position, agent.transform.position));
+        if (Vector3.Distance(playerCharacter.transform.position, agent.transform.position) <= killDistance)
         {
             _glc.NotifyPlayerDeath();
             StopHaunting();
