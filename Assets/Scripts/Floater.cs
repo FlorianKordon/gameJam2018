@@ -19,7 +19,7 @@ public class Floater : MonoBehaviour
         // Instantiate(emptyGameObjectPrefab, transform.position + , Quaternion.identity);
         speed = 1;
         startpos = transform.localPosition;
-        Debug.Log(startpos);
+
 
         StartCoroutine(Movement());
     }
@@ -27,13 +27,8 @@ public class Floater : MonoBehaviour
     IEnumerator Movement()
     {
 
-        //Debug.Log("Vector hin" + (endpos - transform.localPosition).magnitude);
-        
-       
-
         while ((endpos - transform.localPosition).magnitude >= 0.01f)
         {
-            Debug.Log("Ich fahre Hoch");
             //transform.localPosition = transform.localPosition + (endpos - transform.localPosition) * 0.01f * speed;
             transform.localPosition = Vector3.Slerp(transform.localPosition, endpos, 0.01f * speed);
             yield return null;
@@ -41,11 +36,9 @@ public class Floater : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        //Debug.Log("Vector zurück" + (startpos - transform.localPosition).magnitude);
 
         while ((startpos - transform.localPosition).magnitude >= 0.01f)
         {
-            Debug.Log("Ich fahre Runter");
             //transform.localPosition = transform.localPosition + (startpos - transform.localPosition) * 0.01f * speed;
             transform.localPosition = Vector3.Slerp(transform.localPosition, startpos, 0.01f * speed);
             yield return null;
