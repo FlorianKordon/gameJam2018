@@ -34,7 +34,7 @@ public class RotateablePlatform : Platform
     private RotationDirection rotationDirection = RotationDirection.CLOCKWISE;
 
     // Outline Highlighting
-    private Outline _outline;
+    public Outline outlineEffect;
 
     // Global Controllers
     private GameLogicController _glc;
@@ -46,23 +46,9 @@ public class RotateablePlatform : Platform
     public bool gyroEnabled = true;
     public bool accelerometerEnabled = false;
 
-
-    private void Awake()
-    {
-        IsRotatable = true;
-        IsActivated = false;
-
-        gameObject.tag = _rotTag;
-
-        _outline = GetComponent<Outline>();
-        // if not existent, seach in children
-        if (_outline == null)
-            _outline = this.gameObject.transform.GetComponentInChildren<Outline>();
-        _outline.enabled = false;
-    }
-
     private void Start()
     {
+
         // If the system does not support the accelerometer, end update routine
         if (!SystemInfo.supportsGyroscope)
         {
@@ -72,6 +58,17 @@ public class RotateablePlatform : Platform
         Input.gyro.enabled = true;
 
         _glc = FindObjectOfType<GameLogicController>();
+
+        IsRotatable = true;
+        IsActivated = false;
+
+        gameObject.tag = _rotTag;
+
+        outlineEffect = GetComponent<Outline>();
+        // if not existent, seach in children
+        if (outlineEffect == null)
+            outlineEffect = this.gameObject.transform.GetComponentInChildren<Outline>();
+        outlineEffect.enabled = false;
     }
 
     private void Update()
@@ -130,7 +127,7 @@ public class RotateablePlatform : Platform
             }
         }
         // Mark current object by outline
-        _outline.enabled = IsActivated;
+        outlineEffect.enabled = IsActivated;
     }
 
     private bool CheckAccelerometerMobileFlipGesture()

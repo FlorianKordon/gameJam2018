@@ -89,7 +89,4 @@ public class PlatformCollisionCheck : MonoBehaviour
             _rotPlatform = GetComponentInParent<RotateablePlatform>();
     }
 	*/
-
 }
-
-
