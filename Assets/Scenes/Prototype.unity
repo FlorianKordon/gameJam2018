@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 8880965}
   - component: {fileID: 8880964}
   - component: {fileID: 8880968}
-  - component: {fileID: 8880970}
   - component: {fileID: 8880969}
   - component: {fileID: 8880973}
   - component: {fileID: 8880972}
@@ -323,17 +322,6 @@ MonoBehaviour:
   gravity: 22
   tapThreshold: 0.5
   joystick: {fileID: 372446524}
---- !u!114 &8880970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8880963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5827e5cb9d28f0643a6fa6e662dffc23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &8880972
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2269,6 +2257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330c0e7e563f05f419fb72fa3811858c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeRange: 1
 --- !u!4 &371504622
 Transform:
   m_ObjectHideFlags: 0
@@ -3317,6 +3306,59 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   baseMaterials:
   - {fileID: 2100000, guid: 58e436541002974448c6d454cd123ff2, type: 2}
+--- !u!1 &882764908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 882764909}
+  - component: {fileID: 882764910}
+  - component: {fileID: 882764911}
+  m_Layer: 0
+  m_Name: Checkpoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882764909
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882764908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1480835439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &882764910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882764908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8056605, y: 1.9612541, z: 7.0390396}
+  m_Center: {x: -0.067981124, y: 0.48062706, z: -0.9221859}
+--- !u!114 &882764911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882764908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c158c6c154e2240b2d9ec63259fb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &930767724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,6 +4521,50 @@ Transform:
   m_Father: {fileID: 256368041}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1480835437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1480835439}
+  - component: {fileID: 1480835438}
+  m_Layer: 0
+  m_Name: LevelStateController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1480835438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480835437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987e018b0306b88459e4f76508678bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCharacter: {fileID: 8880963}
+  checkpoints:
+  - {fileID: 0}
+--- !u!4 &1480835439
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480835437}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1, y: -83.9, z: -22.1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children:
+  - {fileID: 882764909}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1509808331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5004,8 +5090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaf48901f1ffa043bd2a8440738bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 60
-  minDelay: 30
+  maxDelay: 10
+  minDelay: 10
   minDelayDecrease: 0
   maxDelayDecrease: 0
   maxDuration: 5
@@ -5024,12 +5110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d54e9b057b28dd41b05cb960d69288f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 60
-  minDelay: 30
-  minDelayDecrease: 2
-  maxDelayDecrease: 5
-  maxDuration: 10
-  minDuration: 6
+  maxDelay: 2
+  minDelay: 2
+  minDelayDecrease: 0
+  maxDelayDecrease: 0
+  maxDuration: 8
+  minDuration: 8
   isCurrentlyActive: 0
   persecutor: {fileID: 241865281}
 --- !u!114 &1726517209

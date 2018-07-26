@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    public AudioSource efxSource;                   //Drag a reference to the audio source which will play the sound effects.
-    public AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
+    public AudioSource efxSource;                   
+    public AudioSource musicSource;                 
 
-    public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
-    public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
+    public float lowPitchRange = .95f;              
+    public float highPitchRange = 1.05f;            
 
     /// <summary>
 	/// Play single sound audioclip without random pitch.

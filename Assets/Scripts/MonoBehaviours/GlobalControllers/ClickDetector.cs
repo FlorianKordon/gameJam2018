@@ -7,7 +7,6 @@ public class ClickDetector : MonoBehaviour
 {
     // GLOBAL CONTROLLERS
     private GameLogicController _glc;
-
     private bool _cameraIsMoving = false;
 
     private void Start()
