@@ -51,6 +51,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(InputsDisabled);
         if (InputsDisabled)
             return;
 
@@ -112,6 +113,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnInputsDisabled(bool disabled)
     {
+        Debug.Log("Event recieved: " + disabled);
         InputsDisabled = disabled;
     }
 

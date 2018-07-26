@@ -15,6 +15,8 @@ public class GameLogicController : MonoBehaviour
 
     public event System.Action<bool> InputsDisabledEvent;
 
+    public event System.Action<bool> CameraIsMovingEvent;
+
     public event System.Action PlayerDiedEvent;
 
     public bool DelusionActive
@@ -68,10 +70,21 @@ public class GameLogicController : MonoBehaviour
     {
         Debug.Log("DisabledNotification: " + disabled);
         _inputsDisabled = disabled;
-        DelusionActive = _inputsInverted || _inputsDelayed;
+        //DelusionActive = _inputsInverted || _inputsDelayed;
         if (InputsDisabledEvent != null)
         {
             InputsDisabledEvent(disabled);
+        }
+    }
+
+    public void NotifyCameraIsMoving(bool isMoving)
+    {
+        Debug.Log("IsMoving: " + isMoving);
+        _inputsDisabled = isMoving;
+        if (CameraIsMovingEvent != null)
+        {
+            CameraIsMovingEvent(isMoving);
+            InputsDisabledEvent(isMoving);
         }
     }
 

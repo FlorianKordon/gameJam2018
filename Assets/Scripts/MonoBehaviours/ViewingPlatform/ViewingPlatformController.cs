@@ -25,9 +25,16 @@ public class ViewingPlatformController : MonoBehaviour
     private int moveDirection = 1;
     private float baseOrthographicSize;
     private float movementTimePassed = 0;
-    //private float zoomTimePassed = 0;
 
     private Vector3 movementStartPosition;
+
+    // Global Controllers
+    private GameLogicController _glc;
+
+    private void Awake()
+    {
+        _glc = FindObjectOfType<GameLogicController>();
+    }
 
     private void Start()
     {
@@ -39,6 +46,9 @@ public class ViewingPlatformController : MonoBehaviour
     {
         if (viewing)
         {
+            // Inform all listeners about player input disabled 
+            _glc.NotifyCameraIsMoving(true);
+
             // Get starting position for camera lerping
             movementStartPosition = sceneCamera.transform.position;
             // Determine movement direction
@@ -69,11 +79,10 @@ public class ViewingPlatformController : MonoBehaviour
         if (_currentTarget == null)
             return;
 
+        //Debug.Log(movementStartPosition);
         // Animates the position between a and b looking to target
         movementTimePassed = movementTimePassed + Time.deltaTime / (viewingTime / 2);
-        //zoomTimePassed = zoomTimePassed + Time.deltaTime / viewingTime;
 
-        Debug.Log(movementTimePassed);
         sceneCamera.transform.position = Vector3.Slerp(movementStartPosition, _currentTarget.position, movementTimePassed);
         if (moveDirection == 1)
             sceneCamera.orthographicSize = Mathf.SmoothStep(baseOrthographicSize, baseOrthographicSize * zoomOutFactor, movementTimePassed);
@@ -92,12 +101,16 @@ public class ViewingPlatformController : MonoBehaviour
         _rotation = fromRotation;
         moveDirection = -1;
         movementTimePassed = 0;
-        //zoomTimePassed = 0;
         movementStartPosition = sceneCamera.transform.position;
 
         yield return new WaitForSeconds(viewingTime);
         _currentTarget = null;
         _sceneCameraOffset.enabled = true;
         sceneCamera.orthographicSize = baseOrthographicSize;
+        movementStartPosition = sceneCamera.transform.position;
+        movementTimePassed = 0;
+
+        // Inform all listeners about player input enabled 
+        _glc.NotifyCameraIsMoving(false);
     }
 }

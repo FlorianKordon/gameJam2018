@@ -20,8 +20,8 @@ public class CameraOffset : MonoBehaviour
 
     private void Update()
     {
-        //transform.position = playerCharacter.position + offset;
-        transform.position = new Vector3(playerCharacter.position.x - _camDistance.x, transform.position.y, playerCharacter.position.z - _camDistance.z);
+        transform.position = playerCharacter.position + offset;
+        //transform.position = new Vector3(playerCharacter.position.x - _camDistance.x, transform.position.y, playerCharacter.position.z - _camDistance.z);
         transform.rotation = _camRotation;
     }
 }
