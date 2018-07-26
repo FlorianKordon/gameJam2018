@@ -24,7 +24,7 @@ public class PlatformCollisionCheck : MonoBehaviour
                 Debug.Log("Hit Rotateable");
                 hitObject.GetComponent<RotateablePlatform>().IsLocked = true;
             }
-            else if (raycastHit.collider.transform.parent.tag == "Rotateable")
+            else if (hitObject.transform.parent != null && hitObject.transform.parent.tag == "Rotateable")
             {
                 Debug.Log("Hit Rotateable");
                 hitObject.GetComponentInParent<RotateablePlatform>().IsLocked = true;

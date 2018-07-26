@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class ViewingPlatformCollider : MonoBehaviour
 {
-
-	public GameObject camera; 
-
-	void OnTriggerEnter(Collider collision)
-	{
-		camera.GetComponent<ViewingPlatform>().viewing = true;
-	}
+    void OnTriggerEnter(Collider collision)
+    {
+        GetComponentInParent<ViewingPlatformController>().viewing = true;
+    }
 }

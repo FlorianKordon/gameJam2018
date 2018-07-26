@@ -416,7 +416,6 @@ GameObject:
   - component: {fileID: 552383966}
   - component: {fileID: 552383965}
   - component: {fileID: 552383964}
-  - component: {fileID: 552383968}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -487,24 +486,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -25, z: 0}
---- !u!114 &552383968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 552383963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bbe542733ef0584697d4b69d1faf3a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  from: {fileID: 375860806}
-  to: {fileID: 1340466320}
-  target: {fileID: 528193900}
-  playerCharacter: {fileID: 1644078558}
-  resetPosition: {fileID: 1504343506}
-  interpolationSpeed: 5
-  viewing: 0
 --- !u!1 &778375569
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,12 +521,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 778375569}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.827, y: 2.427, z: -2.222}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.96299994, y: -2.295, z: -5.142}
   m_LocalScale: {x: 0.47622654, y: 1, z: 0.22963685}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1562603776}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &778375572
 MonoBehaviour:
@@ -558,7 +539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee6f92657ce9cc409d836b612d8c7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 552383963}
 --- !u!1 &931575163
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +584,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -666,7 +646,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340466319}
   m_LocalRotation: {x: -0, y: 0.7677987, z: -0, w: 0.6406911}
-  m_LocalPosition: {x: -0.849, y: 6.826, z: -1.623}
+  m_LocalPosition: {x: -0.849, y: 6.826, z: -6.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -731,7 +711,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ab63b5c1bb514b847a92b22b2c1bf083, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -784,7 +764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562603775
 GameObject:
@@ -794,6 +774,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1562603776}
+  - component: {fileID: 1562603777}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -813,9 +794,29 @@ Transform:
   m_Children:
   - {fileID: 1404818199}
   - {fileID: 125224033}
+  - {fileID: 778375571}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562603777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1562603775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbe542733ef0584697d4b69d1faf3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  from: {fileID: 375860806}
+  to: {fileID: 1340466320}
+  target: {fileID: 528193901}
+  resetPosition: {fileID: 1504343507}
+  sceneCamera: {fileID: 552383967}
+  playerCharacter: {fileID: 1644078564}
+  interpolationSpeed: 5
+  viewing: 0
 --- !u!1 &1644078558
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +883,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -920,5 +921,5 @@ Transform:
   m_LocalScale: {x: 0.33473068, y: 0.8591779, z: 0.33473068}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
