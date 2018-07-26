@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntryColliderController : MonoBehaviour
+public class ViewingPlatformCollider : MonoBehaviour
 {
 
 	public GameObject camera; 

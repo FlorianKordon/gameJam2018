@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalCollisionController : MonoBehaviour
+public class PortalCollider : MonoBehaviour
 {	
 
 	private GameObject _portalCtrl;
