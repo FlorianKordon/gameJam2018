@@ -109,7 +109,6 @@ public class PersecutorAgent : MonoBehaviour
     private void CheckPlayerKill()
     {
         // Check if persecutor is in killing range of player character
-        Debug.Log(Vector3.Distance(playerCharacter.transform.position, agent.transform.position));
         if (Vector3.Distance(playerCharacter.transform.position, agent.transform.position) <= killDistance)
         {
             _glc.NotifyPlayerDeath();

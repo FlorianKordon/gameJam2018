@@ -35,8 +35,10 @@ public class ClickDetector : MonoBehaviour
             }
             else if (!_cameraIsMoving)
             {
+                Debug.Log(GameObject.FindGameObjectsWithTag("Rotateable").Length);
                 foreach (GameObject item in GameObject.FindGameObjectsWithTag("Rotateable"))
                 {
+                    Debug.Log(item.GetComponent<RotateablePlatform>());
                     item.GetComponent<RotateablePlatform>().IsActivated = false;
                     Outline outline = item.GetComponent<Outline>();
                     if (outline == null)
