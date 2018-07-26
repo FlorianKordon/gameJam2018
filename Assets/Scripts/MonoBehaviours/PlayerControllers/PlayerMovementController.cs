@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    public bool Alive { get; set; }
     public float speed = 10.0F;
     public float jumpSpeed = 10.0F;
     public float gravity = 22.0F;
@@ -28,6 +29,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private float _baseSpeed;
     private float _baseJumpSpeed;
+    private const float _fallingSpeedThreshold = -30f;
 
     // GLOBAL CONTROLLERS
     private GameLogicController _glc;
@@ -46,13 +48,18 @@ public class PlayerMovementController : MonoBehaviour
         _glc.InputsInvertedEvent += OnInputsInverted;
         _glc.InputsDisabledEvent += OnInputsDisabled;
         _glc.InputsDelayedEvent += OnInputsDelayed;
+
+        Alive = true;
     }
     //InputsDelayed
 
     private void Update()
     {
-        if (InputsDisabled)
+        Debug.Log(Alive);
+        if (InputsDisabled || !Alive)
             return;
+
+        CheckForFalling();
 
         // Handle history tracking of accelerometer tilt
         _accerleratorHistory.Add(Input.acceleration);
@@ -75,7 +82,6 @@ public class PlayerMovementController : MonoBehaviour
             speed = speed * 0.995f;
             jumpSpeed = jumpSpeed * 0.995f;
         }
-
         // Check if character is grounded and if inputs are not disabled
         if (_charController.isGrounded)
         {
@@ -91,6 +97,15 @@ public class PlayerMovementController : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         _currentJumpHeight = moveDirection.y;
         _charController.Move(moveDirection * Time.deltaTime);
+    }
+
+    private void CheckForFalling()
+    {
+        if (Alive && (_charController.velocity.y < _fallingSpeedThreshold))
+        {
+            Alive = false;
+            _glc.NotifyPlayerDeath();
+        }
     }
 
     private void CheckForJump()
@@ -112,6 +127,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnInputsDisabled(bool disabled)
     {
+        Debug.Log("Event recieved: " + disabled);
         InputsDisabled = disabled;
     }
 

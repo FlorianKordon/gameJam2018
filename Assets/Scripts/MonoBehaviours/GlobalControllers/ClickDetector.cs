@@ -7,11 +7,12 @@ public class ClickDetector : MonoBehaviour
 {
     // GLOBAL CONTROLLERS
     private GameLogicController _glc;
+    private bool _cameraIsMoving = false;
 
     private void Start()
     {
         _glc = FindObjectOfType<GameLogicController>();
-
+        _glc.CameraIsMovingEvent += OnCameraIsMoving;
     }
     private void Update()
     {
@@ -32,15 +33,17 @@ public class ClickDetector : MonoBehaviour
                 else if (go.transform.parent.tag == "Rotateable")
                     go.GetComponentInParent<RotateablePlatform>().OnInteraction();
             }
-            else
+            else if (!_cameraIsMoving)
             {
+                Debug.Log(GameObject.FindGameObjectsWithTag("Rotateable").Length);
                 foreach (GameObject item in GameObject.FindGameObjectsWithTag("Rotateable"))
                 {
+                    Debug.Log(item.GetComponent<RotateablePlatform>());
                     item.GetComponent<RotateablePlatform>().IsActivated = false;
                     Outline outline = item.GetComponent<Outline>();
                     if (outline == null)
                         outline = item.GetComponentInChildren<Outline>();
-                    outline.enabled = false;                    
+                    outline.enabled = false;
                 }
                 _glc.NotifyDisabledInputs(false);
             }
@@ -56,5 +59,15 @@ public class ClickDetector : MonoBehaviour
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
 
         return results.Count > 0;
+    }
+
+    private void OnCameraIsMoving(bool isMoving)
+    {
+        _cameraIsMoving = isMoving;
+    }
+
+    private void OnDisabled()
+    {
+        _glc.CameraIsMovingEvent -= OnCameraIsMoving;
     }
 }

@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
     public event Action AfterSceneLoad;
 
     public CanvasGroup faderCanvasGroup;
-    
+
     [Tooltip("Specifiy how long the fade between scene-black-scene should be.")]
     public float fadeDuration = 1f;
 
@@ -26,10 +26,10 @@ public class SceneController : MonoBehaviour
         faderCanvasGroup.alpha = 1f;
 
         // Start scene loading and wait until it finished
-        yield return StartCoroutine(LoadSceneAndSetActive(startingSceneName)); 
+        yield return StartCoroutine(LoadSceneAndSetActive(startingSceneName));
 
         // Start coroutine to fade to alpha=0
-        StartCoroutine(Fade(0f)); 
+        StartCoroutine(Fade(0f));
     }
 
     public void FadeAndLoadScene(string sceneName)
@@ -38,6 +38,23 @@ public class SceneController : MonoBehaviour
         {
             StartCoroutine(FadeAndSwitchScene(sceneName));
         }
+    }
+
+    public IEnumerator TimedCrossFade(float fadeTime)
+    {
+        fadeDuration = fadeTime;
+        yield return StartCoroutine(Fade(1f));
+        yield return new WaitForSeconds(0.2f);
+        yield return StartCoroutine(Fade(0f));
+        fadeDuration = 1f;
+    }
+
+    public IEnumerator TimedSingleFade(float fadeTime, float delay, float fadeValue)
+    {
+        fadeDuration = fadeTime;
+        yield return new WaitForSeconds(delay);
+        yield return StartCoroutine(Fade(fadeValue));
+        fadeDuration = 1f;
     }
 
     private IEnumerator FadeAndSwitchScene(string sceneName)
