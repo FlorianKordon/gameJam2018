@@ -13,7 +13,7 @@ public class Respawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (transform.position.y <= respawn.y -10)
+		if (transform.position.y <= respawn.y -150)
         {
             transform.position = respawn;
         }

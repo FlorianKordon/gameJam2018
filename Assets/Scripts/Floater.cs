@@ -5,35 +5,49 @@ using UnityEngine;
 
 public class Floater : MonoBehaviour
 {
-    public Transform EndPositionTransform;
-    public float speed;
 
-    private Vector3 startPosition;
+    private Vector3 startpos;
+
+    //public Transform endpos;
+    public Vector3 endpos;
+
+    public float speed;
 
     // Use this for initialization
     void Start()
     {
-        startPosition = transform.localPosition;
-        StartCoroutine(MovementDir());
+
+        // Instantiate(emptyGameObjectPrefab, transform.position + , Quaternion.identity);
+        speed = 1;
+        startpos = transform.localPosition;
+
+
+        StartCoroutine(Movement());
     }
 
     IEnumerator MovementDir()
     {
-        //yield return new WaitForSeconds(1);
-        while (Vector3.Distance(EndPositionTransform.localPosition, transform.localPosition) >= 0.5f)
+
+        while ((endpos - transform.localPosition).magnitude >= 0.01f)
         {
-            Debug.Log("Endposition: " + EndPositionTransform.localPosition);
-            Debug.Log("Cube Position: " + transform.localPosition);
-            transform.localPosition = Vector3.Slerp(transform.localPosition, EndPositionTransform.localPosition, 0.01f);
+            //transform.localPosition = transform.localPosition + (endpos - transform.localPosition) * 0.01f * speed;
+            transform.localPosition = Vector3.Slerp(transform.localPosition, endpos, 0.01f * speed);
             yield return null;
         }
         //yield return new WaitForSeconds(1);
 
-        while (Vector3.Distance(startPosition, transform.localPosition) >= 0.5f)
+        yield return new WaitForSeconds(3);
+
+
+        while ((startpos - transform.localPosition).magnitude >= 0.01f)
         {
             transform.localPosition = Vector3.Slerp(transform.localPosition, startPosition, 0.01f);
             yield return null;
         }
         StartCoroutine(MovementDir());
     }
+
+    // Update is called once per frame   
+
+
 }
