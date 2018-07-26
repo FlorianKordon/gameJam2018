@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour
 {
     public float speed = 10.0F;
     public float jumpSpeed = 10.0F;
@@ -43,29 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Add event listeners
         InputsDisabled = InputsDelayed = InvertedControls = false;
-
-        _glc.InputsInvertedEvent += (bool inverted) =>
-        {
-            if (inverted)
-                _moveDirectionMultiplier = new Vector3(0, new System.Random().Next(90, 270), 0);
-            else
-                _moveDirectionMultiplier = Vector3.zero;
-            InvertedControls = inverted;
-        };
-        _glc.InputsDisabledEvent += (bool disabled) =>
-        {
-            InputsDisabled = disabled;
-        };
-        _glc.InputsDelayedEvent += (bool delayed) =>
-        {
-            if (!delayed)
-            {
-                speed = _baseSpeed;
-                jumpSpeed = _baseJumpSpeed;
-            }
-            _moveDirectionHistory = new CircularBuffer<Vector3>(40);
-            InputsDelayed = delayed;
-        };
+        _glc.InputsInvertedEvent += OnInputsInverted;
+        _glc.InputsDisabledEvent += OnInputsDisabled;
+        _glc.InputsDelayedEvent += OnInputsDelayed;
     }
     //InputsDelayed
 
@@ -121,9 +101,36 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.y = jumpSpeed;
     }
 
+    private void OnInputsInverted(bool inverted)
+    {
+        if (inverted)
+            _moveDirectionMultiplier = new Vector3(0, new System.Random().Next(90, 270), 0);
+        else
+            _moveDirectionMultiplier = Vector3.zero;
+        InvertedControls = inverted;
+    }
+
+    private void OnInputsDisabled(bool disabled)
+    {
+        InputsDisabled = disabled;
+    }
+
+    private void OnInputsDelayed(bool delayed)
+    {
+        if (!delayed)
+        {
+            speed = _baseSpeed;
+            jumpSpeed = _baseJumpSpeed;
+        }
+        _moveDirectionHistory = new CircularBuffer<Vector3>(40);
+        InputsDelayed = delayed;
+    }
+
     private void OnDisable()
     {
-
+        _glc.InputsInvertedEvent -= OnInputsInverted;
+        _glc.InputsDisabledEvent -= OnInputsDisabled;
+        _glc.InputsDelayedEvent -= OnInputsDelayed;
     }
 }
 
