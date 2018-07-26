@@ -284,7 +284,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 8880963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -105.37, y: -89.9, z: -38.7}
+  m_LocalPosition: {x: -19.3, y: -83.8, z: -47.7}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1687,14 +1687,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbe542733ef0584697d4b69d1faf3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: {fileID: 1879353364}
   to: {fileID: 2097574740}
   target: {fileID: 549889554}
   resetPosition: {fileID: 1476607701}
-  sceneCamera: {fileID: 1879353364}
   playerCharacter: {fileID: 8880967}
-  viewingTime: 3
+  sceneCamera: {fileID: 1879353363}
+  viewingTime: 4
   interpolationSpeed: 2
+  orthographicLerpMode: 1
+  zoomOutFactor: 2
   viewing: 0
 --- !u!1 &256967923
 GameObject:
@@ -4203,7 +4204,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1476607700}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.99, y: 0.96, z: -0.93}
+  m_LocalPosition: {x: -5.42, y: 0.96, z: -0.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 256368041}
@@ -4914,7 +4915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacter: {fileID: 8880967}
-  cameraOffset: {x: -19.5, y: 16.5, z: -20}
+  offset: {x: -19.5, y: 16.5, z: -20}
 --- !u!20 &1879353363
 Camera:
   m_ObjectHideFlags: 0
@@ -4931,7 +4932,7 @@ Camera:
     y: 0
     width: 2
     height: 1
-  near clip plane: -20
+  near clip plane: -50
   far clip plane: 100
   field of view: 23.4
   orthographic: 1
@@ -5149,13 +5150,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2040301281}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -23.8, y: 0.14, z: -6.04}
-  m_LocalScale: {x: 1, y: 1, z: 2.07374}
+  m_LocalRotation: {x: -0, y: 0.9992361, z: -0, w: 0.039081007}
+  m_LocalPosition: {x: -2.51, y: 1.51, z: -1.19}
+  m_LocalScale: {x: 2.0051873, y: 1, z: 2.07374}
   m_Children: []
   m_Father: {fileID: 256368041}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 175.52, z: 0}
 --- !u!114 &2040301283
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraOffset : MonoBehaviour
 {
     public Transform playerCharacter;
-    public Vector3 cameraOffset = new Vector3(-19.5f, 16.5f, -20f);
+    public Vector3 offset = new Vector3(-19.5f, 16.5f, -20f);
 
     private Vector3 _camDistance;
     private Quaternion _camRotation;
@@ -13,13 +13,14 @@ public class CameraOffset : MonoBehaviour
 
     private void Awake()
     {
-        transform.position = playerCharacter.position + cameraOffset;
+        transform.position = playerCharacter.position + offset;
         _camDistance = playerCharacter.position - transform.position;
         _camRotation = transform.rotation;
     }
 
     private void Update()
     {
+        //transform.position = playerCharacter.position + offset;
         transform.position = new Vector3(playerCharacter.position.x - _camDistance.x, transform.position.y, playerCharacter.position.z - _camDistance.z);
         transform.rotation = _camRotation;
     }
