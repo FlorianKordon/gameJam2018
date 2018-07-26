@@ -9,11 +9,12 @@ public enum RotationDirection
     COUNTERCLOCKWISE
 }
 
-
 public class RotateablePlatform : Platform
 {
     // Platform utility
     public bool IsActivated { get; set; }
+    public bool IsLocked { get; set; }
+
     //public bool invertXAndYAxis = true;
     public float flippingThresholdAccelerometer = 1f;
     public float flippingThresholdGyroX = 8f;
@@ -98,6 +99,11 @@ public class RotateablePlatform : Platform
     {
         Debug.Log("OnInteraction triggered!");
 
+        // If the platform currently is locked, we don't want to activate it/or deactivate it.
+        if (IsLocked)
+            return;
+
+
         // When the platform currently is activated, an additional click should deactivate it;
         // If the platform currently is not activated, we want to activate it for rotation.
         IsActivated = !IsActivated;
@@ -154,7 +160,6 @@ public class RotateablePlatform : Platform
         //   || (invertXAndYAxis && Vector3.Equals(rotationAxis, new Vector3(1, 0, 0))))
         if (Vector3.Equals(rotationAxis, new Vector3(0, 1, 0)))
         {
-            Debug.Log("asdlkjasdlkjasdlkjasdlkj");
             if (currentTiltDifference.y < flippingThresholdGyroY)
                 rotationDirection = RotationDirection.CLOCKWISE;
             else
