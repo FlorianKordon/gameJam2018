@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3680017, g: 0.5021931, b: 0.9056836, a: 1}
+  m_IndirectSpecularColor: {r: 0.36800152, g: 0.5021931, b: 0.9056836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1458,9 +1458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d54e9b057b28dd41b05cb960d69288f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 3000
-  minDelay: 500
-  minDelayDecrease: 2
+  maxDelay: 90
+  minDelay: 45
+  minDelayDecrease: 3
   maxDelayDecrease: 5
   maxDuration: 8
   minDuration: 6
@@ -4952,7 +4952,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 849081094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.610714, y: 36, z: -29}
+  m_LocalPosition: {x: -13.610714, y: 36, z: -28.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 950270709}
@@ -5364,7 +5364,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950270708}
   m_LocalRotation: {x: 0.70710677, y: -0.000000029802326, z: -0.000000029802326, w: -0.70710677}
-  m_LocalPosition: {x: 0, y: 0, z: 0.41}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 849081095}
@@ -8935,9 +8935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4a1d36463c87b4dad7973d384bd947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelusion: 0
-  currentDelusion: 0
+  maxDelusion: 100
+  currentDelusion: 1
   delusionGain: 0
+  deathPenalty: 10
   bar: {fileID: 1234290428}
 --- !u!95 &1586030276
 Animator:

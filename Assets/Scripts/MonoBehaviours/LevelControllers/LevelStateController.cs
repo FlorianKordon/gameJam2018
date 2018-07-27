@@ -24,7 +24,6 @@ public class LevelStateController : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-        Debug.Log("On Player Death");
         StartCoroutine(RespawnPlayer());
     }
 
