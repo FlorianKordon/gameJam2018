@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3680017, g: 0.5021931, b: 0.9056836, a: 1}
+  m_IndirectSpecularColor: {r: 0.36800152, g: 0.5021931, b: 0.9056836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1436,13 +1436,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaf48901f1ffa043bd2a8440738bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 6000
-  minDelay: 6000
-  minDelayDecrease: 0
-  maxDelayDecrease: 0
-  maxDuration: 5
-  minDuration: 5
+  maxDelay: 90
+  minDelay: 45
+  minDelayDecrease: 3
+  maxDelayDecrease: 5
+  maxDuration: 6
+  minDuration: 3
   isCurrentlyActive: 0
+  _sc: {fileID: 0}
+  _as: {fileID: 0}
   playerCharacter: {fileID: 830011850}
   dissolveMaterial: {fileID: 2100000, guid: 71c1bd412819fc445ae14e73860d432b, type: 2}
 --- !u!114 &193002867
@@ -1456,13 +1458,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d54e9b057b28dd41b05cb960d69288f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 3000
-  minDelay: 500
-  minDelayDecrease: 2
+  maxDelay: 90
+  minDelay: 45
+  minDelayDecrease: 3
   maxDelayDecrease: 5
   maxDuration: 8
   minDuration: 6
   isCurrentlyActive: 0
+  _sc: {fileID: 0}
+  _as: {fileID: 0}
   persecutor: {fileID: 2098942054}
 --- !u!114 &193002868
 MonoBehaviour:
@@ -1475,13 +1479,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c6c74e9d4369846abdec92a1155532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 60
-  minDelay: 30
-  minDelayDecrease: 2
+  maxDelay: 90
+  minDelay: 45
+  minDelayDecrease: 3
   maxDelayDecrease: 5
   maxDuration: 6
-  minDuration: 4
+  minDuration: 3
   isCurrentlyActive: 0
+  _sc: {fileID: 0}
+  _as: {fileID: 0}
 --- !u!114 &193002869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1503,8 @@ MonoBehaviour:
   - {fileID: 193002868}
   - {fileID: 193002867}
   - {fileID: 193002866}
+  _glc: {fileID: 0}
+  _sc: {fileID: 0}
 --- !u!4 &193002870
 Transform:
   m_ObjectHideFlags: 0
@@ -2902,7 +2910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   to: {fileID: 419391297}
   target: {fileID: 711377740}
-  resetPosition: {fileID: 0}
+  resetPosition: {fileID: 1635321920}
   playerCharacter: {fileID: 830011851}
   sceneCamera: {fileID: 1878697743}
   viewingTime: 4
@@ -4042,7 +4050,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 704104898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94783f4984f92c549829e4d815d7fcf6, type: 3}
   m_Name: 
@@ -4944,7 +4952,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 849081094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.610714, y: 36, z: -29}
+  m_LocalPosition: {x: -13.610714, y: 36, z: -28.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 950270709}
@@ -5356,7 +5364,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950270708}
   m_LocalRotation: {x: 0.70710677, y: -0.000000029802326, z: -0.000000029802326, w: -0.70710677}
-  m_LocalPosition: {x: 0, y: 0, z: 0.41}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 849081095}
@@ -8927,9 +8935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4a1d36463c87b4dad7973d384bd947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelusion: 0
-  currentDelusion: 0
+  maxDelusion: 100
+  currentDelusion: 1
   delusionGain: 0
+  deathPenalty: 10
   bar: {fileID: 1234290428}
 --- !u!95 &1586030276
 Animator:

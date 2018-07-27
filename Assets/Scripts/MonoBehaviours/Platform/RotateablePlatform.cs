@@ -38,6 +38,7 @@ public class RotateablePlatform : Platform
 
     // Global Controllers
     private GameLogicController _glc;
+    private SoundController _sc;
 
     ////////////////
     // Accelerometer/Gyro support
@@ -58,6 +59,7 @@ public class RotateablePlatform : Platform
         Input.gyro.enabled = true;
 
         _glc = FindObjectOfType<GameLogicController>();
+        _sc = FindObjectOfType<SoundController>();
 
         IsRotatable = true;
         IsActivated = false;
@@ -99,7 +101,6 @@ public class RotateablePlatform : Platform
         // If the platform currently is locked, we don't want to activate it/or deactivate it.
         if (IsLocked)
             return;
-
 
         // When the platform currently is activated, an additional click should deactivate it;
         // If the platform currently is not activated, we want to activate it for rotation.
@@ -175,6 +176,9 @@ public class RotateablePlatform : Platform
     private IEnumerator RotatePlatform(float rotationValue, Vector3 rotationAxis, RotationDirection rotationDirection)
     {
         isRotating = true;
+
+        // AudioSoundCue
+        _sc.PlaySingleEFX(_sc.platformRotationSound);
 
         float currentRotation = Vector3.Dot(transform.localEulerAngles, rotationAxis);
 

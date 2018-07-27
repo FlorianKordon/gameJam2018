@@ -11,6 +11,8 @@ public class ControlDelusion : Delusion
     {
         _glc = FindObjectOfType<GameLogicController>();
         _cs = FindObjectOfType<CameraShake>();
+
+        _as = _sc.controlDelusionSource;
     }
 
     public override void DelusionForecast()
