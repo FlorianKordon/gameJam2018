@@ -15,7 +15,8 @@ public class NihilismDelusion : Delusion
     private void Start()
     {
         _renderer = playerCharacter.GetComponent<Renderer>();
-        _baseMaterial = _renderer.material;
+        if (_renderer != null)
+            _baseMaterial = _renderer.material;
 
         _glc = FindObjectOfType<GameLogicController>();
 
@@ -36,7 +37,8 @@ public class NihilismDelusion : Delusion
 
     public override void DelusionCloseDown()
     {
-        _renderer.material = _baseMaterial;
+        if (_renderer != null)
+            _renderer.material = _baseMaterial;
         _glc.NotifyDelayedInputs(false);
     }
 }

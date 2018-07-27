@@ -20,6 +20,9 @@ public class PlayerMovementController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private float _tiltZ;
 
+    private Animator _animator;
+    private int _animatorSpeedHashParam;
+
     // INPUT CONTROLS
     private Vector3 _moveDirectionMultiplier = Vector3.zero;
     private float _currentJumpHeight;
@@ -30,6 +33,7 @@ public class PlayerMovementController : MonoBehaviour
     private float _baseSpeed;
     private float _baseJumpSpeed;
     private const float _fallingSpeedThreshold = -30f;
+    private Vector3 _lastMoveDirection = Vector3.zero;
 
     // GLOBAL CONTROLLERS
     private GameLogicController _glc;
@@ -38,6 +42,10 @@ public class PlayerMovementController : MonoBehaviour
     {
         _charController = GetComponent<CharacterController>();
         _glc = FindObjectOfType<GameLogicController>();
+
+        _animator = GetComponent<Animator>();
+        _animatorSpeedHashParam = Animator.StringToHash("Speed");
+
         _currentJumpHeight = 0;
 
         _baseSpeed = speed;
@@ -55,7 +63,6 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Alive);
         if (InputsDisabled || !Alive)
             return;
 
@@ -69,9 +76,20 @@ public class PlayerMovementController : MonoBehaviour
 
         // Retrieve user joystick input
         moveDirection = joystick.InputDirection;
-        moveDirection = transform.TransformDirection(moveDirection);
+        //transform.localRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+        //moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         moveDirection = Quaternion.Euler(_moveDirectionMultiplier) * moveDirection;
+        //transform.localRotation = Quaternion.LookRotation(moveDirection)
+        //Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));        
+        //if (NextDir != Vector3.zero)
+        //    transform.rotation = Quaternion.LookRotation(NextDir);
+        if (moveDirection.magnitude != 0)
+            _lastMoveDirection = moveDirection;
+        transform.rotation = Quaternion.LookRotation(_lastMoveDirection);
+
+        // Notify animator about current speed
+        _animator.SetFloat(_animatorSpeedHashParam, moveDirection.magnitude);
 
         if (InputsDelayed)
         {
@@ -97,6 +115,7 @@ public class PlayerMovementController : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         _currentJumpHeight = moveDirection.y;
         _charController.Move(moveDirection * Time.deltaTime);
+        //transform.rotation = Quaternion.LookRotation(moveDirection);
     }
 
     private void CheckForFalling()
@@ -110,10 +129,11 @@ public class PlayerMovementController : MonoBehaviour
 
     private void CheckForJump()
     {
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") || _tiltZ > tapThreshold)
+        {
             moveDirection.y = jumpSpeed;
-        else if (_tiltZ > tapThreshold)
-            moveDirection.y = jumpSpeed;
+            _animator.SetTrigger("Jump");
+        }
     }
 
     private void OnInputsInverted(bool inverted)
