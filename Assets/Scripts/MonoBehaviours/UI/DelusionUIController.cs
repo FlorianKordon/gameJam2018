@@ -60,7 +60,7 @@ public class DelusionUIController : MonoBehaviour
         }
         else if (bar.fillAmount >= 0.5f)
         {
-            bar.color = Color.yellow;
+            bar.color = Color.magenta;
         }
     }
 

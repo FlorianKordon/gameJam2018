@@ -32,7 +32,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private float _baseSpeed;
     private float _baseJumpSpeed;
-    private const float _fallingSpeedThreshold = -30f;
+    private const float _fallingSpeedThreshold = -40f;
     private Vector3 _lastMoveDirection = Vector3.zero;
 
     // GLOBAL CONTROLLERS
