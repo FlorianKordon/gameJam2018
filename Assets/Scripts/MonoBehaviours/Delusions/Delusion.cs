@@ -23,9 +23,14 @@ public abstract class Delusion : MonoBehaviour
 
     public bool isCurrentlyActive;
 
+    public SoundController _sc;
+    public AudioSource _as;
+
     private void Awake()
     {
         gameObject.tag = "Delusion";
+
+        _sc = FindObjectOfType<SoundController>();
     }
 
     public IEnumerator StartDelusion(int encounterDelay)
@@ -48,7 +53,13 @@ public abstract class Delusion : MonoBehaviour
         {
             yield return new WaitForSeconds(VibrationForecastTime);
         }
+
+        // Play delusion content
         DelusionContent();
+
+        // FadeIn delusion audio cue and fade out ambient
+        _sc.FadeInAudioSource(_as);
+
         isCurrentlyActive = true;
 
         // For stopping the delusion, wait for the specified duration
@@ -61,6 +72,8 @@ public abstract class Delusion : MonoBehaviour
     {
         // Call clean up code for dilusion
         DelusionCloseDown();
+        // Fade out delusion audio cue
+        _sc.FadeOutAudioSource(_as);
 
         // Generate new random value for delay decrease
         System.Random rnd = new System.Random();

@@ -8,8 +8,17 @@ public class DelusionScheduler : MonoBehaviour
 {
     public List<Delusion> delusions = new List<Delusion>();
 
+    // GLOBAL CONTROLLERS
+    public GameLogicController _glc;
+    public SoundController _sc;
+
     private void Start()
     {
+        _glc = FindObjectOfType<GameLogicController>();
+        _sc = FindObjectOfType<SoundController>();
+
+        _glc.DelusionActivityEvent += OnDilusionActive;
+
         PopulateDelusionTimings(0);
         ScheduleDelusionStarts();
     }
@@ -29,5 +38,18 @@ public class DelusionScheduler : MonoBehaviour
         {
             StartCoroutine(del.StartDelusion(del.EncounterDelay));
         }
+    }
+
+    private void OnDilusionActive(bool active)
+    {
+        if (active)
+            _sc.FadeOutAmbient();
+        else
+            _sc.FadeInAmbient();
+    }
+
+    private void OnDisable()
+    {
+        _glc.DelusionActivityEvent += OnDilusionActive;
     }
 }

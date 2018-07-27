@@ -18,6 +18,8 @@ public class NihilismDelusion : Delusion
         _baseMaterial = _renderer.material;
 
         _glc = FindObjectOfType<GameLogicController>();
+
+        _as = _sc.nihilismDelusionSource;
     }
 
     public override void DelusionForecast()

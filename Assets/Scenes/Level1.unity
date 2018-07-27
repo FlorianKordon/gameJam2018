@@ -1436,13 +1436,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaf48901f1ffa043bd2a8440738bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 6000
-  minDelay: 6000
-  minDelayDecrease: 0
-  maxDelayDecrease: 0
-  maxDuration: 5
-  minDuration: 5
+  maxDelay: 90
+  minDelay: 45
+  minDelayDecrease: 3
+  maxDelayDecrease: 5
+  maxDuration: 6
+  minDuration: 3
   isCurrentlyActive: 0
+  _sc: {fileID: 0}
+  _as: {fileID: 0}
   playerCharacter: {fileID: 830011850}
   dissolveMaterial: {fileID: 2100000, guid: 71c1bd412819fc445ae14e73860d432b, type: 2}
 --- !u!114 &193002867
@@ -1456,13 +1458,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d54e9b057b28dd41b05cb960d69288f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 60
-  minDelay: 30
-  minDelayDecrease: 2
+  maxDelay: 90
+  minDelay: 45
+  minDelayDecrease: 3
   maxDelayDecrease: 5
   maxDuration: 8
   minDuration: 6
   isCurrentlyActive: 0
+  _sc: {fileID: 0}
+  _as: {fileID: 0}
   persecutor: {fileID: 2098942054}
 --- !u!114 &193002868
 MonoBehaviour:
@@ -1475,13 +1479,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c6c74e9d4369846abdec92a1155532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 60
-  minDelay: 30
-  minDelayDecrease: 2
+  maxDelay: 90
+  minDelay: 45
+  minDelayDecrease: 3
   maxDelayDecrease: 5
   maxDuration: 6
-  minDuration: 4
+  minDuration: 3
   isCurrentlyActive: 0
+  _sc: {fileID: 0}
+  _as: {fileID: 0}
 --- !u!114 &193002869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1503,8 @@ MonoBehaviour:
   - {fileID: 193002868}
   - {fileID: 193002867}
   - {fileID: 193002866}
+  _glc: {fileID: 0}
+  _sc: {fileID: 0}
 --- !u!4 &193002870
 Transform:
   m_ObjectHideFlags: 0
@@ -2902,7 +2910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   to: {fileID: 419391297}
   target: {fileID: 711377740}
-  resetPosition: {fileID: 0}
+  resetPosition: {fileID: 1635321920}
   playerCharacter: {fileID: 830011851}
   sceneCamera: {fileID: 1878697743}
   viewingTime: 4
@@ -4042,7 +4050,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 704104898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94783f4984f92c549829e4d815d7fcf6, type: 3}
   m_Name: 
@@ -10084,7 +10092,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878697740}
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -132.6, y: -53, z: -43.5}
+  m_LocalPosition: {x: 20.7, y: -53, z: -119.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1662173185}
@@ -10123,7 +10131,7 @@ Camera:
   far clip plane: 100
   field of view: 23.4
   orthographic: 1
-  orthographic size: 50
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
