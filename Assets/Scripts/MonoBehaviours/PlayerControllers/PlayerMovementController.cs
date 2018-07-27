@@ -76,16 +76,12 @@ public class PlayerMovementController : MonoBehaviour
 
         // Retrieve user joystick input
         moveDirection = joystick.InputDirection;
-        //transform.localRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
-        //moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         moveDirection = Quaternion.Euler(_moveDirectionMultiplier) * moveDirection;
-        //transform.localRotation = Quaternion.LookRotation(moveDirection)
-        //Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));        
-        //if (NextDir != Vector3.zero)
-        //    transform.rotation = Quaternion.LookRotation(NextDir);
+
         if (moveDirection.magnitude != 0)
             _lastMoveDirection = moveDirection;
+
         transform.rotation = Quaternion.LookRotation(_lastMoveDirection);
 
         // Notify animator about current speed
@@ -96,6 +92,11 @@ public class PlayerMovementController : MonoBehaviour
             // Handly moveDirectionHistory
             _moveDirectionHistory.Add(moveDirection);
             moveDirection = _moveDirectionHistory.Peek();
+
+            if (moveDirection.magnitude != 0)
+                _lastMoveDirection = moveDirection;
+
+            transform.rotation = Quaternion.LookRotation(_lastMoveDirection);
 
             speed = speed * 0.995f;
             jumpSpeed = jumpSpeed * 0.995f;
@@ -149,6 +150,9 @@ public class PlayerMovementController : MonoBehaviour
     {
         Debug.Log("Event recieved: " + disabled);
         InputsDisabled = disabled;
+
+        // set current speed to 0 in animator
+        _animator.SetFloat(_animatorSpeedHashParam, 0);
     }
 
     private void OnInputsDelayed(bool delayed)

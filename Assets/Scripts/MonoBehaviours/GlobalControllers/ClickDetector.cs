@@ -9,6 +9,8 @@ public class ClickDetector : MonoBehaviour
     private GameLogicController _glc;
     private bool _cameraIsMoving = false;
 
+    public int rayCastDistance = 200;
+
     private void Start()
     {
         _glc = FindObjectOfType<GameLogicController>();
@@ -23,7 +25,7 @@ public class ClickDetector : MonoBehaviour
 
             // We don't want to detect a raycast hit when we click on the ui elements
             // see for touch difficulties https://answers.unity.com/questions/895861/ui-system-not-blocking-raycasts-on-mobile-only.html
-            if (!IsPointerOverUIObject() && Physics.Raycast(ray, out hit, 100)) // or whatever range, if applicable
+            if (!IsPointerOverUIObject() && Physics.Raycast(ray, out hit, rayCastDistance)) // or whatever range, if applicable
             {
                 GameObject go = hit.transform.gameObject;
 

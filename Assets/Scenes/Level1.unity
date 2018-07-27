@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -349,8 +349,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
+--- !u!1001 &31840605
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 863.876
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -35.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665770392097202, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114453553898653280, guid: cf3b1db44fc4696499e0660fe98d0ae7,
+        type: 2}
+      propertyPath: playerCharacter
+      value: 
+      objectReference: {fileID: 325658753}
+    - target: {fileID: 1532830929662290, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: cf3b1db44fc4696499e0660fe98d0ae7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &34402185
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,8 +451,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -39, y: 15, z: -20.11}
   speed: 0
   floatWaitTime: 3
@@ -468,6 +527,8 @@ GameObject:
   - component: {fileID: 51901005}
   - component: {fileID: 51901007}
   - component: {fileID: 51901006}
+  - component: {fileID: 51901009}
+  - component: {fileID: 51901008}
   m_Layer: 0
   m_Name: Cylinder_001
   m_TagString: Untagged
@@ -533,6 +594,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 51901004}
   m_Mesh: {fileID: 4300106, guid: 40cc8f05e7c0f254c816f65367583f62, type: 3}
+--- !u!65 &51901008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 51901004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25.193804, y: 27.481758, z: 3.3495774}
+  m_Center: {x: -6.0860224, y: 0.15471353, z: -0.6747888}
+--- !u!114 &51901009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 51901004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b784fc0cc58df214aa9083d2f701e1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &59700677
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,8 +809,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &77855300
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -991,8 +1079,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &135688416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -1231,7 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -1404,8 +1496,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &193002865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,16 +1532,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaf48901f1ffa043bd2a8440738bc22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 90
-  minDelay: 45
+  maxDelay: 60
+  minDelay: 40
   minDelayDecrease: 3
   maxDelayDecrease: 5
-  maxDuration: 6
-  minDuration: 3
+  maxDuration: 4
+  minDuration: 2
   isCurrentlyActive: 0
   _sc: {fileID: 0}
   _as: {fileID: 0}
-  playerCharacter: {fileID: 830011850}
+  playerCharacter: {fileID: 325658753}
   dissolveMaterial: {fileID: 2100000, guid: 71c1bd412819fc445ae14e73860d432b, type: 2}
 --- !u!114 &193002867
 MonoBehaviour:
@@ -1458,16 +1554,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d54e9b057b28dd41b05cb960d69288f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 90
-  minDelay: 45
+  maxDelay: 70
+  minDelay: 40
   minDelayDecrease: 3
   maxDelayDecrease: 5
-  maxDuration: 8
-  minDuration: 6
+  maxDuration: 10
+  minDuration: 8
   isCurrentlyActive: 0
   _sc: {fileID: 0}
   _as: {fileID: 0}
-  persecutor: {fileID: 2098942054}
+  persecutor: {fileID: 1425426435}
 --- !u!114 &193002868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,11 +1575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c6c74e9d4369846abdec92a1155532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 90
-  minDelay: 45
-  minDelayDecrease: 3
-  maxDelayDecrease: 5
-  maxDuration: 6
+  maxDelay: 50
+  minDelay: 30
+  minDelayDecrease: 2
+  maxDelayDecrease: 4
+  maxDuration: 5
   minDuration: 3
   isCurrentlyActive: 0
   _sc: {fileID: 0}
@@ -1516,7 +1612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &201047673
 GameObject:
@@ -1729,8 +1825,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &278719638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,8 +1933,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
+--- !u!1001 &325658752
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 223.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -203.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098176852903368, guid: a87c47e29fd75b447bd9bd242fe560f3,
+        type: 2}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1266074714}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a87c47e29fd75b447bd9bd242fe560f3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &325658753 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1996707737136970, guid: a87c47e29fd75b447bd9bd242fe560f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 325658752}
+--- !u!4 &325658759 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4945523748836874, guid: a87c47e29fd75b447bd9bd242fe560f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 325658752}
 --- !u!1 &327999502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +2023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987e018b0306b88459e4f76508678bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacter: {fileID: 830011850}
+  playerCharacter: {fileID: 325658753}
   checkpoints:
   - {fileID: 641811306}
 --- !u!4 &327999504
@@ -1877,7 +2038,7 @@ Transform:
   m_Children:
   - {fileID: 641811305}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332506201
 GameObject:
@@ -1924,8 +2085,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -21, y: 36, z: -24.34}
   speed: 0
   floatWaitTime: 3
@@ -2088,8 +2253,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &343808228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,8 +2361,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &350614069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,8 +2469,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &389671088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,8 +2653,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &419391296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,9 +2680,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 419391296}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.9333334, y: -7.636667, z: -2.9500003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.03066095, y: 0.6890662, z: 0.723275, w: -0.033483107}
+  m_LocalPosition: {x: -1.5128713, y: -22.15644, z: -0.64909124}
+  m_LocalScale: {x: 3.73493, y: 1.6622871, z: 15.303194}
   m_Children: []
   m_Father: {fileID: 487684472}
   m_RootOrder: 4
@@ -2726,7 +2907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -2801,8 +2982,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -7.01, y: 1, z: -8}
   speed: 0
   floatWaitTime: 3
@@ -2911,12 +3096,12 @@ MonoBehaviour:
   to: {fileID: 419391297}
   target: {fileID: 711377740}
   resetPosition: {fileID: 1635321920}
-  playerCharacter: {fileID: 830011851}
+  playerCharacter: {fileID: 325658759}
   sceneCamera: {fileID: 1878697743}
-  viewingTime: 4
+  viewingTime: 5
   interpolationSpeed: 2
   orthographicLerpMode: 1
-  zoomOutFactor: 2
+  zoomOutFactor: 1.2
   viewing: 0
 --- !u!1 &506276612
 GameObject:
@@ -2962,9 +3147,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -3132,8 +3319,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &541853405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,8 +3544,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &593255676
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,8 +3652,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &628478609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,12 +3703,12 @@ MonoBehaviour:
   to: {fileID: 1507334270}
   target: {fileID: 711377740}
   resetPosition: {fileID: 1058365027}
-  playerCharacter: {fileID: 830011851}
+  playerCharacter: {fileID: 325658759}
   sceneCamera: {fileID: 1878697743}
-  viewingTime: 4
+  viewingTime: 5
   interpolationSpeed: 2
   orthographicLerpMode: 1
-  zoomOutFactor: 2
+  zoomOutFactor: 1.2
   viewing: 0
 --- !u!1 &638546169
 GameObject:
@@ -3613,8 +3812,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &641811304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3837,7 +4040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -3969,8 +4172,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &680606749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4015,9 +4222,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -4050,13 +4259,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 704104898}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94783f4984f92c549829e4d815d7fcf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skyBoxBaseMaterial: {fileID: 2100000, guid: 22075fe14147f4549bc723fe3ff7830b, type: 2}
-  skyBoxDelusionMaterial: {fileID: 2100000, guid: 648a10478a0fa374aa21c32fc03aaad0,
+  skyBoxBaseMaterial: {fileID: 2100000, guid: a995a68a641fcc945b9475ebd6366718, type: 2}
+  skyBoxDelusionMaterial: {fileID: 2100000, guid: ed456a24e13c85342aac861d1432ad49,
     type: 2}
   affectSkyBox: 1
   affectPlatforms: 1
@@ -4071,7 +4280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711377739
 GameObject:
@@ -4175,8 +4384,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: bf7b5e80516a6cb439e72babdc4285d2, type: 2}
+  - {fileID: 2100000, guid: 85611e006a8a30c45a9e4c047ffe6d8d, type: 2}
 --- !u!1 &715545379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,8 +4492,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &761241924
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,8 +4600,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &781064218
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,8 +4708,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &783466282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,8 +4898,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &828574006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4777,158 +5006,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
---- !u!1 &830011850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 830011851}
-  - component: {fileID: 830011858}
-  - component: {fileID: 830011857}
-  - component: {fileID: 830011856}
-  - component: {fileID: 830011855}
-  - component: {fileID: 830011854}
-  - component: {fileID: 830011853}
-  - component: {fileID: 830011852}
-  m_Layer: 0
-  m_Name: PlayerCharacter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &830011851
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14, y: 223.08, z: -203.85}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &830011852
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &830011853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a31a057d1827544a18f5dab43cf4bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugRaycast: 1
-  raycastDistance: 10
---- !u!114 &830011854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456ba2a56d655ab41b58cc4953bb6915, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jumpSpeed: 10
-  gravity: 22
-  tapThreshold: 0.5
-  joystick: {fileID: 1266074714}
---- !u!143 &830011855
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &830011856
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &830011857
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 1e28f5fa8d4784844a1dd74975f4d062, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &830011858
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 830011850}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &849081094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,9 +5056,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -5031,8 +5116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -6.87, y: 36, z: -34}
   speed: 0
   floatWaitTime: 3
@@ -5253,7 +5342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -5442,7 +5531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -5570,9 +5659,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -5685,8 +5776,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1004218370
 GameObject:
   m_ObjectHideFlags: 0
@@ -5830,8 +5925,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1017971620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,9 +5975,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -5991,8 +6092,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1058365026
 GameObject:
   m_ObjectHideFlags: 0
@@ -6166,7 +6271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -6241,8 +6346,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -29, y: 21.74, z: -12}
   speed: 0
   floatWaitTime: 3
@@ -6405,8 +6514,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1102995943
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,8 +6622,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1109023152
 GameObject:
   m_ObjectHideFlags: 0
@@ -6654,8 +6771,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1173077846
 GameObject:
   m_ObjectHideFlags: 0
@@ -6687,7 +6808,7 @@ MonoBehaviour:
   - {fileID: 937910384}
   - {fileID: 524329343}
   - {fileID: 1204742677}
-  player: {fileID: 830011850}
+  player: {fileID: 325658753}
 --- !u!4 &1173077848
 Transform:
   m_ObjectHideFlags: 0
@@ -6702,7 +6823,7 @@ Transform:
   - {fileID: 524329346}
   - {fileID: 1204742680}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204742677
 GameObject:
@@ -6861,8 +6982,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1227769883
 GameObject:
   m_ObjectHideFlags: 0
@@ -7123,8 +7248,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1266074712
 GameObject:
   m_ObjectHideFlags: 0
@@ -7308,8 +7437,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1309435991
 GameObject:
   m_ObjectHideFlags: 0
@@ -7412,8 +7545,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1310922606
 GameObject:
   m_ObjectHideFlags: 0
@@ -7516,8 +7653,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1314088887
 GameObject:
   m_ObjectHideFlags: 0
@@ -7562,9 +7703,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -7620,8 +7763,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -21, y: 31.11, z: -10}
   speed: 0
   floatWaitTime: 3
@@ -7786,7 +7933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -7918,8 +8065,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1351156261
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,7 +8130,7 @@ Transform:
   - {fileID: 1058365027}
   - {fileID: 2144588998}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360456242
 GameObject:
@@ -8083,8 +8234,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1404830008
 GameObject:
   m_ObjectHideFlags: 0
@@ -8129,9 +8284,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -8221,6 +8378,71 @@ Transform:
   m_Father: {fileID: 1351156263}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1425426431
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.0703
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 861.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -32.404
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114647513169337682, guid: 2056495a26303c54e9c9399c44885d0c,
+        type: 2}
+      propertyPath: playerCharacter
+      value: 
+      objectReference: {fileID: 325658753}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.16348645
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.16348654
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634313873795608, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.16348654
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2056495a26303c54e9c9399c44885d0c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1425426435 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114647513169337682, guid: 2056495a26303c54e9c9399c44885d0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1425426431}
+  m_Script: {fileID: 11500000, guid: ff388180b52630849970d72168900ffe, type: 3}
 --- !u!1 &1426850266
 GameObject:
   m_ObjectHideFlags: 0
@@ -8323,8 +8545,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1474855704
 GameObject:
   m_ObjectHideFlags: 0
@@ -8370,8 +8596,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: 0, y: 31.05, z: -17.09}
   speed: 0
   floatWaitTime: 3
@@ -8562,8 +8792,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1518828446
 GameObject:
   m_ObjectHideFlags: 0
@@ -8666,8 +8900,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1532582642
 GameObject:
   m_ObjectHideFlags: 0
@@ -8770,8 +9008,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1533156819
 GameObject:
   m_ObjectHideFlags: 0
@@ -8816,9 +9058,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -8873,9 +9117,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -8936,7 +9182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDelusion: 100
-  currentDelusion: 1
+  currentDelusion: 0
   delusionGain: 0
   deathPenalty: 10
   bar: {fileID: 1234290428}
@@ -9066,8 +9312,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1606672577
 GameObject:
   m_ObjectHideFlags: 0
@@ -9170,8 +9420,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1635321919
 GameObject:
   m_ObjectHideFlags: 0
@@ -9194,7 +9448,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635321919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.1, y: 37.052, z: -31.948}
+  m_LocalPosition: {x: -21.1, y: 37.081, z: -33.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 487684472}
@@ -9244,9 +9498,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -9285,6 +9541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e305f4ec9435c7343a23cb606c3e8f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rayCastDistance: 500
 --- !u!114 &1662173184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9309,7 +9566,7 @@ Transform:
   m_Children:
   - {fileID: 1878697741}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1676483029
 GameObject:
@@ -9430,9 +9687,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -9531,7 +9790,7 @@ RectTransform:
   - {fileID: 1266074713}
   - {fileID: 1586030274}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9640,8 +9899,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1712853026
 GameObject:
   m_ObjectHideFlags: 0
@@ -9744,8 +10007,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1737482777
 GameObject:
   m_ObjectHideFlags: 0
@@ -9848,8 +10115,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1790262574
 GameObject:
   m_ObjectHideFlags: 0
@@ -9929,11 +10200,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1790262574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.76, y: 0.172, z: -32.7}
-  m_LocalScale: {x: 4.275905, y: 1, z: 3.30842}
+  m_LocalPosition: {x: -4.76, y: 863, z: -32.7}
+  m_LocalScale: {x: 14.417232, y: 1, z: 9.404103}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804877375
 GameObject:
@@ -10124,7 +10395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -10178,7 +10449,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878697740}
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 27.5, y: 53.5, z: -112.9}
+  m_LocalPosition: {x: -93.1, y: 128.8, z: -112.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1662173185}
@@ -10195,8 +10466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af90536c7799fbb4c993fe63587bea36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacter: {fileID: 830011851}
-  offset: {x: -19.5, y: 16.5, z: -20}
+  playerCharacter: {fileID: 325658759}
+  offset: {x: -119.5, y: 166.5, z: -120}
 --- !u!20 &1878697743
 Camera:
   m_ObjectHideFlags: 0
@@ -10211,13 +10482,13 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2
+    width: 1
     height: 1
-  near clip plane: -50
-  far clip plane: 120
+  near clip plane: -30
+  far clip plane: 800
   field of view: 23.4
   orthographic: 1
-  orthographic size: 32
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -10405,7 +10676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -10537,8 +10808,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1893121041
 GameObject:
   m_ObjectHideFlags: 0
@@ -10641,8 +10916,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1901310707
 GameObject:
   m_ObjectHideFlags: 0
@@ -10783,8 +11062,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: bf7b5e80516a6cb439e72babdc4285d2, type: 2}
+  - {fileID: 2100000, guid: 85611e006a8a30c45a9e4c047ffe6d8d, type: 2}
 --- !u!1 &1929508687
 GameObject:
   m_ObjectHideFlags: 0
@@ -10829,9 +11112,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -10887,8 +11172,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -7, y: 18.96, z: -14}
   speed: 0
   floatWaitTime: 3
@@ -11051,8 +11340,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &1961398035
 GameObject:
   m_ObjectHideFlags: 0
@@ -11130,8 +11423,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: aca210a5b54fa7b40a525b064a34fc42, type: 2}
+  - {fileID: 2100000, guid: 72ac7d8d600f667409826c3c7c06ba96, type: 2}
   endpos: {x: -39, y: 6.01, z: -11}
   speed: 0
   floatWaitTime: 3
@@ -11294,8 +11591,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &2000197320
 GameObject:
   m_ObjectHideFlags: 0
@@ -11340,9 +11641,11 @@ MonoBehaviour:
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
   delusionMaterials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
   baseMaterials:
-  - {fileID: 2100000, guid: 9702cfc3f42046c43891aaf27c9c067f, type: 2}
+  - {fileID: 2100000, guid: 095a06126a7992f4783308c17818e8e3, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
   flippingThresholdAccelerometer: 1
   flippingThresholdGyroX: 8
   flippingThresholdGyroY: 4
@@ -11455,8 +11758,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &2041608272
 GameObject:
   m_ObjectHideFlags: 0
@@ -11559,8 +11866,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &2058568810
 GameObject:
   m_ObjectHideFlags: 0
@@ -11663,8 +11974,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicBaseMaterials: 0
   meshRendererRef: {fileID: 0}
-  delusionMaterials: []
-  baseMaterials: []
+  delusionMaterials:
+  - {fileID: 2100000, guid: 6c173dc0483fcbb42823f8cef314ae83, type: 2}
+  - {fileID: 2100000, guid: d8a9d5bc3eccdd948be8c5f02bbce523, type: 2}
+  baseMaterials:
+  - {fileID: 2100000, guid: 33ef5c877ee2d754c8e872bb8d8dd82d, type: 2}
+  - {fileID: 2100000, guid: 53b1cddd29cc99b4382da244b610b731, type: 2}
 --- !u!1 &2070002506
 GameObject:
   m_ObjectHideFlags: 0
@@ -11801,7 +12116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-  outlineWidth: 5
+  outlineWidth: 1
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -11831,152 +12146,6 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
---- !u!1 &2098942051
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2098942058}
-  - component: {fileID: 2098942057}
-  - component: {fileID: 2098942056}
-  - component: {fileID: 2098942055}
-  - component: {fileID: 2098942054}
-  - component: {fileID: 2098942053}
-  - component: {fileID: 2098942052}
-  m_Layer: 0
-  m_Name: Persecutor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &2098942052
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098942051}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 34c663acf643e9c4b89414c0ba43d3f1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &2098942053
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098942051}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 0.5
-  m_Acceleration: 10
-  avoidancePriority: 50
-  m_AngularSpeed: 200
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &2098942054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098942051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff388180b52630849970d72168900ffe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCharacter: {fileID: 830011850}
-  killDistance: 1.5
-  speedMultiplier: 1.2
-  speedIncrease: 0.05
-  animator: {fileID: 2098942052}
-  agent: {fileID: 2098942053}
-  minDistanceToPlayerChar: 4
-  maxDistanceToPlayerChar: 8
---- !u!135 &2098942055
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098942051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &2098942056
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098942051}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: aaa798a8bba49fe4a82bcf316cc67ab7, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &2098942057
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098942051}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2098942058
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098942051}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.68, y: 0.962, z: -32.2}
-  m_LocalScale: {x: 0.56359017, y: 0.5635901, z: 0.5635901}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2120435299
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class DelusionUIController : MonoBehaviour
 {
     public float maxDelusion = 100f;
     public float currentDelusion = 1f;
-    public int delusionGain = 0;
+    public float delusionGain = 0.5f;
     public float deathPenalty = 10f;
     public Image bar;
 
@@ -16,10 +16,12 @@ public class DelusionUIController : MonoBehaviour
     private int _closeToInsanityHashParam;
 
     private GameLogicController _glc;
+    private SceneController _sc;
 
     private void Awake()
     {
         _glc = FindObjectOfType<GameLogicController>();
+        _sc = FindObjectOfType<SceneController>();
         _glc.PlayerDiedEvent += OnPlayerDied;
     }
 
@@ -37,13 +39,13 @@ public class DelusionUIController : MonoBehaviour
 
     private void IncreaseDelusion(float del)
     {
-        Debug.Log(del);
         if (currentDelusion + del < maxDelusion)
             currentDelusion += del;
         else
         {
             currentDelusion = maxDelusion;
             Debug.Log("Insanity!!");
+            _sc.FadeAndLoadScene("Level1");
         }
         Delusion();
     }
@@ -60,7 +62,6 @@ public class DelusionUIController : MonoBehaviour
         {
             bar.color = Color.yellow;
         }
-
     }
 
     private void OnPlayerDied()
