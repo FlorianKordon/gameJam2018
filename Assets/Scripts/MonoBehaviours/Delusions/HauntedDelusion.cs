@@ -6,6 +6,11 @@ public class HauntedDelusion : Delusion
 {
     public PersecutorAgent persecutor;
 
+    private void Start()
+    {
+        _as = _sc.hauntedDelusionSource;
+    }
+
     public override void DelusionForecast()
     {
         //Debug.Log("Vibration Forecast");
