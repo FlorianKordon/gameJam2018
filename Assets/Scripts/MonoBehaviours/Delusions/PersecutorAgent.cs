@@ -28,7 +28,7 @@ public class PersecutorAgent : MonoBehaviour
     private float speedDampTime = 0.1f;
 
     // MESH
-    private MeshRenderer _meshRend;
+    private MeshRenderer[] _meshRend;
 
     // GLOBAL CONTROLLERS
     private GameLogicController _glc;
@@ -42,8 +42,11 @@ public class PersecutorAgent : MonoBehaviour
     {
         //destinationPosition = transform.position;
         _glc = FindObjectOfType<GameLogicController>();
-        _meshRend = GetComponent<MeshRenderer>();
-        _meshRend.enabled = false;
+        _meshRend = GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer rend in _meshRend)
+        {
+            rend.enabled = false;
+        }
 
         baseSpeed = agent.speed;
 
@@ -85,7 +88,10 @@ public class PersecutorAgent : MonoBehaviour
         InvokeRepeating("FollowAndHauntPlayer", 0.2f, 0.2f);
         IsHaunting = true;
         agent.enabled = true;
-        _meshRend.enabled = true;
+        foreach (MeshRenderer rend in _meshRend)
+        {
+            rend.enabled = true;
+        }
     }
 
     public void StopHaunting()
@@ -94,7 +100,10 @@ public class PersecutorAgent : MonoBehaviour
         agent.Warp(waitingPosition);
         IsHaunting = false;
         agent.enabled = false;
-        _meshRend.enabled = false;
+        foreach (MeshRenderer rend in _meshRend)
+        {
+            rend.enabled = false;
+        }
         agent.speed = baseSpeed;
 
         CancelInvoke("FollowAndHauntPlayer");

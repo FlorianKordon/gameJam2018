@@ -6,56 +6,71 @@ using UnityEngine.UI;
 
 public class DelusionUIController : MonoBehaviour
 {
-
-    public float maxDelusion;
-    public float currentDelusion;
-
-    public int delusionGain;
-	
+    public float maxDelusion = 100f;
+    public float currentDelusion = 1f;
+    public float delusionGain = 0.5f;
+    public float deathPenalty = 10f;
     public Image bar;
 
-	private Animator anim;
+    private Animator anim;
+    private int _closeToInsanityHashParam;
 
-	private int _closeToInsanityHashParam;
+    private GameLogicController _glc;
+    private SceneController _sc;
 
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
-		anim = GetComponent<Animator>();
-        currentDelusion = 0;
-        maxDelusion = 100;
-        delusion();
-		_closeToInsanityHashParam = Animator.StringToHash("CloseToInsanity");
+        _glc = FindObjectOfType<GameLogicController>();
+        _sc = FindObjectOfType<SceneController>();
+        _glc.PlayerDiedEvent += OnPlayerDied;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        Delusion();
+        _closeToInsanityHashParam = Animator.StringToHash("CloseToInsanity");
+    }
+
+    private void Update()
     {
         IncreaseDelusion(delusionGain * Time.deltaTime);
     }
 
-    public void IncreaseDelusion(float del)
+    private void IncreaseDelusion(float del)
     {
-
-        if (currentDelusion + del < maxDelusion) currentDelusion += del;
+        if (currentDelusion + del < maxDelusion)
+            currentDelusion += del;
         else
         {
             currentDelusion = maxDelusion;
             Debug.Log("Insanity!!");
+            _sc.FadeAndLoadScene("Level1");
         }
-        delusion();
+        Delusion();
     }
 
-    private void delusion()
+    private void Delusion()
     {
-
         bar.fillAmount = currentDelusion / maxDelusion;
-        if (bar.fillAmount >= 0.8) { bar.color = Color.red; 
-		//anim.SetBool("CloseToInsanity",true);
-		anim.SetBool(_closeToInsanityHashParam, true);
+        if (bar.fillAmount >= 0.8)
+        {
+            bar.color = Color.red;
+            anim.SetBool(_closeToInsanityHashParam, true);
+        }
+        else if (bar.fillAmount >= 0.5f)
+        {
+            bar.color = Color.magenta;
+        }
+    }
 
-		}
-        else if (bar.fillAmount >= 0.5f) { bar.color = Color.yellow; }
+    private void OnPlayerDied()
+    {
+        IncreaseDelusion(deathPenalty);
+    }
 
+    private void OnDisable()
+    {
+        _glc.PlayerDiedEvent -= OnPlayerDied;
     }
 }
